@@ -3,64 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHELA Industrial UG (haftungsbeschränkt) i.G.</title>
+    <title>CHELA Industrial | International Trade & Project Mediation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f7f6; }
-        header { background: #1a2a6c; color: white; padding: 60px 20px; text-align: center; }
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
-        h2 { color: #1a2a6c; border-bottom: 2px solid #1a2a6c; padding-bottom: 10px; }
-        .service-box { margin-bottom: 30px; }
-        footer { margin-top: 50px; padding: 40px 20px; background: #222; color: #bbb; font-size: 0.9em; }
-        .imprint { display: flex; flex-wrap: wrap; justify-content: space-between; }
-        .imprint-col { flex: 1; min-width: 250px; margin-bottom: 20px; }
+        .lang-content { display: none; }
+        .lang-active { display: block; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 font-sans text-slate-900">
 
-<header>
-    <h1>CHELA Industrial</h1>
-    <p>International Trade & Project Mediation</p>
-</header>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight">CHELA <span class="text-blue-900">Industrial</span></div>
+            <div class="flex gap-4 text-sm font-bold">
+                <button onclick="setLang('de')" class="hover:text-blue-900 px-2 py-1 border-b-2 border-transparent hover:border-blue-900">DE</button>
+                <button onclick="setLang('en')" class="hover:text-blue-900 px-2 py-1 border-b-2 border-transparent hover:border-blue-900">EN</button>
+                <button onclick="setLang('tr')" class="hover:text-blue-900 px-2 py-1 border-b-2 border-transparent hover:border-blue-900">TR</button>
+            </div>
+        </div>
+    </nav>
 
-<div class="container">
-    <section>
-        <h2>About Us</h2>
-        <p>CHELA Industrial acts as a strategic interface in the global industrial sector. We bridge the gap between world-class manufacturers and complex technical project requirements.</p>
+    <header class="bg-slate-900 text-white py-24 px-6 text-center">
+        <div class="lang-content de lang-active">
+            <h1 class="text-5xl font-extrabold mb-4">Internationaler Handel & Projektvermittlung</h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">Ihr strategischer Partner im globalen Industriesektor.</p>
+        </div>
+        <div class="lang-content en">
+            <h1 class="text-5xl font-extrabold mb-4">International Trade & Project Mediation</h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">Your strategic partner in the global industrial sector.</p>
+        </div>
+        <div class="lang-content tr">
+            <h1 class="text-5xl font-extrabold mb-4">Uluslararası Ticaret ve Proje Arabuluculuğu</h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">Küresel endüstriyel sektörde stratejik ortağınız.</p>
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto py-20 px-6 grid md:grid-cols-2 gap-10">
+        <div class="bg-white p-10 rounded-2xl shadow-xl border-t-8 border-blue-900">
+            <div class="lang-content de lang-active">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900">Internationaler Handel</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">Strategische Beschaffung von Industrieanlagen und technischen Produkten für globale Märkte.</p>
+            </div>
+            <div class="lang-content en">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900">International Trade</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">Strategic sourcing and procurement of industrial equipment and technical products for global markets.</p>
+            </div>
+            <div class="lang-content tr">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900">Uluslararası Ticaret</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">Küresel pazarlar için endüstriyel ekipman ve teknik ürünlerin stratejik tedariki.</p>
+            </div>
+        </div>
+
+        <div class="bg-white p-10 rounded-2xl shadow-xl border-t-8 border-blue-900">
+            <div class="lang-content de lang-active">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900">Projektvermittlung</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">Vernetzung von industriellen Akteuren und Erleichterung von technischen Großprojekten.</p>
+            </div>
+            <div class="lang-content en">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900">Project Mediation</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">Connecting industrial stakeholders and facilitating high-stakes technical projects.</p>
+            </div>
+            <div class="lang-content tr">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900">Proje Arabuluculuğu</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">Endüstriyel paydaşların ağ oluşturması ve teknik projelerin kolaylaştırılması.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="service-box">
-        <h2>Our Services</h2>
-        <h3>International Trade</h3>
-        <p>Strategic sourcing and procurement of industrial equipment and technical products for global markets.</p>
-        
-        <h3>Project Mediation</h3>
-        <p>Connecting industrial stakeholders and facilitating high-stakes technical projects with a focus on efficiency and regulatory compliance.</p>
-    </section>
-</div>
+    <footer class="bg-slate-900 text-slate-400 py-16 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-sm border-t border-slate-800 pt-12">
+            <div>
+                <h3 class="text-white font-bold mb-4 tracking-widest uppercase">Impressum</h3>
+                <p class="font-bold">CHELA Industrial UG (haftungsbeschränkt) i.G.</p>
+                <p>Erfweiler Straße 12</p>
+                <p>66994 Dahn, Deutschland</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-4 tracking-widest uppercase">Kontakt</h3>
+                <p>Email: info@chela-industrial.de</p>
+                <p>Web: www.chela-industrial.de</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-4 tracking-widest uppercase">Rechtliches</h3>
+                <p>Geschäftsführer: Durukan Kürüm</p>
+                <p>Registergericht: Amtsgericht Zweibrücken</p>
+                <p>(Anmeldung erfolgt)</p>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-xs opacity-50">
+            &copy; 2026 CHELA Industrial UG (haftungsbeschränkt) i.G.
+        </div>
+    </footer>
 
-<footer>
-    <div class="container imprint">
-        <div class="imprint-col">
-            <strong>Impressum</strong><br>
-            CHELA Industrial UG (haftungsbeschränkt) i.G.<br>
-            Erfweiler Straße 12<br>
-            66994 Dahn, Germany
-        </div>
-        <div class="imprint-col">
-            <strong>Contact</strong><br>
-            Email: info@chela-industrial.de<br>
-            Web: www.chela-industrial.de
-        </div>
-        <div class="imprint-col">
-            <strong>Legal</strong><br>
-            Managing Director: Durukan Kürüm<br>
-            Registry Court: Amtsgericht Zweibrücken<br>
-            (Anmeldung erfolgt)
-        </div>
-    </div>
-    <center><p>&copy; 2026 CHELA Industrial UG (haftungsbeschränkt) i.G. | Disclaimer: Company in formation.</p></center>
-</footer>
-
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('lang-active'));
+            document.querySelectorAll('.' + lang).forEach(el => el.classList.add('lang-active'));
+        }
+    </script>
 </body>
 </html>
