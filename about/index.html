@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über Uns | CHELA Industrial - Global Industrial Bridges</title>
+    <meta name="description" content="CHELA Industrial verbindet globale Märkte. Import & Export von Industrietechnologien sowie strategische Projektvermittlung.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .lang-content { display: none; }
+        .lang-active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold tracking-tight">CHELA <span class="text-blue-900">Industrial</span></a>
+            <div class="flex items-center gap-8">
+                <div class="hidden md:flex gap-6 text-sm font-bold uppercase tracking-widest">
+                    <a href="/" class="hover:text-blue-900">Home</a>
+                    <a href="/about" class="text-blue-900 border-b-2 border-blue-900">Über Uns</a>
+                    <a href="/projects" class="hover:text-blue-900">Projekte</a>
+                </div>
+                <div class="flex gap-2 text-xs font-black border-l pl-6">
+                    <button onclick="setLang('de')" class="hover:text-blue-900 px-1">DE</button>
+                    <button onclick="setLang('en')" class="hover:text-blue-900 px-1">EN</button>
+                    <button onclick="setLang('tr')" class="hover:text-blue-900 px-1">TR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-slate-900 text-white py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Global Industrial Bridges</h1>
+            <p class="text-xl text-slate-400">Strategische Schnittstelle im globalen Industriesektor.</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto py-16 px-6 leading-relaxed text-lg text-slate-700">
+        
+        <div class="lang-content de lang-active space-y-6">
+            <p>Die moderne Industrie kennt keine Grenzen. Bei <strong>CHELA Industrial</strong> agieren wir als strategische Schnittstelle für den Transfer von Hochtechnologien und Industriemaschinen zwischen globalen Märkten und dem deutschen Industriesektor.</p>
+            <p>Unser Fokus liegt nicht auf einem stationären Standort, sondern auf <strong>Mobilität und Vernetzung</strong>. Wir importieren zukunftsweisende Technologien nach Deutschland und exportieren erstklassige deutsche Industrietechnik in die Welt.</p>
+            <div class="bg-blue-50 border-l-4 border-blue-900 p-8 my-8 shadow-sm">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Unser Kernauftrag</h2>
+                <p>Wir bauen die notwendigen Brücken, um Geschäftsbeziehungen im industriellen Sektor domestic sowie international zu realisieren und zu festigen.</p>
+            </div>
+        </div>
+
+        <div class="lang-content en space-y-6">
+            <p>Modern industry knows no borders. At <strong>CHELA Industrial</strong>, we act as a strategic interface for the transfer of high technologies and industrial machinery between global markets and the German industrial sector.</p>
+            <p>Our focus is not on a stationary location, but on <strong>mobility and networking</strong>. We import forward-looking technologies to Germany and export first-class German industrial technology to the world.</p>
+            <div class="bg-blue-50 border-l-4 border-blue-900 p-8 my-8 shadow-sm">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Our Core Mission</h2>
+                <p>We build the necessary bridges to realize and strengthen business relationships in the industrial sector, both domestically and internationally.</p>
+            </div>
+        </div>
+
+        <div class="lang-content tr space-y-6">
+            <p>Modern endüstri sınır tanımıyor. <strong>CHELA Industrial</strong> olarak, küresel pazarlar ile Alman endüstriyel sektörü arasında yüksek teknolojilerin ve endüstriyel makinelerin transferi için stratejik bir arayüz olarak hareket ediyoruz.</p>
+            <p>Odak noktamız sabit bir konum değil, <strong>mobilite ve ağ oluşturmadır</strong>. Geleceğe yönelik teknolojileri Almanya'ya ithal ediyor ve birinci sınıf Alman endüstriyel teknolojisini dünyaya ihraç ediyoruz.</p>
+            <div class="bg-blue-50 border-l-4 border-blue-900 p-8 my-8 shadow-sm">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Temel Misyonumuz</h2>
+                <p>Endüstriyel sektörde hem yurt içinde hem de uluslararası alanda iş ilişkilerini gerçekleştirmek ve güçlendirmek için gerekli köprüleri kuruyoruz.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
+        <div class="max-w-6xl mx-auto text-center border-t border-slate-800 pt-8 text-sm">
+            <p class="font-bold text-white mb-2">CHELA Industrial UG (haftungsbeschränkt) i.G.</p>
+            <p>Erfweiler Straße 12, 66994 Dahn, Germany</p>
+        </div>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('lang-active'));
+            document.querySelectorAll('.' + lang).forEach(el => el.classList.add('lang-active'));
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
