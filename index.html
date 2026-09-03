@@ -3,26 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101820">
 
     <title>CHELA Industrial | Handel & Projektvermittlung für die Industrie</title>
     <meta name="description" content="CHELA Industrial verbindet globale Märkte mit deutschem Know-how: internationaler Handel, Projektvermittlung und B2B-Beschaffung über alle Industriezweige hinweg.">
+    <meta name="keywords" content="CHELA Industrial Startseite, Handel und Projektvermittlung, Industriepartner Deutschland, Aufzugstechnik Partner, CHELA Industrial, Internationaler Handel, Projektvermittlung, B2B-Beschaffung, Industrieanlagen, Aufzugstechnik, Fördertechnik, Personenaufzüge, Lastenaufzüge, Panoramaaufzüge, Hydraulikaufzüge, Fahrzeugaufzüge, Aufzugsmodernisierung, Aufzugswartung, PERA Mühendislik, Deutschland Türkei Handel, Maschinenbau Handel, Industrievermittlung, Handelsvermittler Deutschland | CHELA Industrial homepage, trade and project mediation, industrial partner Germany, elevator technology partner, CHELA Industrial, international trade, project mediation, B2B sourcing, industrial equipment trade, elevator technology, conveying technology, passenger elevators, freight elevators, panoramic elevators, hydraulic elevators, vehicle elevators, elevator modernization, elevator maintenance, PERA Mühendislik, Germany Turkey trade, industrial machinery sourcing, trade intermediary Germany | CHELA Industrial ana sayfa, ticaret ve proje arabuluculuğu, Almanya endüstri ortağı, asansör teknolojisi ortağı, CHELA Industrial, uluslararası ticaret, proje aracılığı, B2B tedarik, endüstriyel ekipman ticareti, asansör teknolojisi, taşıma teknolojisi, yolcu asansörleri, yük asansörleri, panoramik asansörler, hidrolik asansörler, araç asansörleri, asansör modernizasyonu, asansör bakımı, PERA Mühendislik, Almanya Türkiye ticareti, endüstriyel makine tedariki, Almanya ticaret aracısı">
     <link rel="canonical" href="https://www.chela-industrial.de/" />
+
+    <!-- The DE/EN/TR content all lives on this one URL (client-side toggle),
+         so all three hreflang tags — plus x-default — point back at the same
+         canonical address. That's the recognized pattern for telling search
+         engines a single-URL, JS-toggled page serves multiple languages. -->
+    <link rel="alternate" hreflang="de" href="https://www.chela-industrial.de/" />
+    <link rel="alternate" hreflang="en" href="https://www.chela-industrial.de/" />
+    <link rel="alternate" hreflang="tr" href="https://www.chela-industrial.de/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.chela-industrial.de/" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CHELA Industrial">
+    <meta property="og:title" content="CHELA Industrial | Handel & Projektvermittlung für die Industrie">
+    <meta property="og:description" content="CHELA Industrial verbindet globale Märkte mit deutschem Know-how: internationaler Handel, Projektvermittlung und B2B-Beschaffung über alle Industriezweige hinweg.">
+    <meta property="og:url" content="https://www.chela-industrial.de/">
+    <meta property="og:image" content="https://www.chela-industrial.de/assets/logo-navy.png">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="tr_TR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CHELA Industrial | Handel & Projektvermittlung für die Industrie">
+    <meta name="twitter:description" content="CHELA Industrial verbindet globale Märkte mit deutschem Know-how: internationaler Handel, Projektvermittlung und B2B-Beschaffung über alle Industriezweige hinweg.">
+    <meta name="twitter:image" content="https://www.chela-industrial.de/assets/logo-navy.png">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "CHELA Industrial",
+      "legalName": "CHELA Industrial UG (haftungsbeschränkt)",
       "url": "https://www.chela-industrial.de",
-      "description": "Strategic interface for international industrial trade and project mediation.",
+      "logo": "https://www.chela-industrial.de/assets/logo-navy.png",
+      "email": "info@chela-industrial.de",
+      "description": "Strategic interface for international industrial trade and project mediation, and the exclusive EU sourcing partner of PERA Mühendislik for elevator and conveying technology.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Erfweiler Straße 12",
         "addressLocality": "Dahn",
         "postalCode": "66994",
         "addressCountry": "DE"
-      }
+      },
+      "areaServed": ["Germany", "Turkey", "European Union"],
+      "knowsLanguage": ["de", "en", "tr"],
+      "inLanguage": ["de", "en", "tr"],
+      "knowsAbout": [
+        "International industrial trade", "Project mediation", "B2B sourcing",
+        "Elevator technology", "Conveying technology", "Passenger elevators",
+        "Freight elevators", "Panoramic elevators", "Hydraulic elevators",
+        "Vehicle elevators", "Elevator modernization", "Elevator maintenance",
+        "PERA Mühendislik", "Aufzugstechnik", "Asansör teknolojisi"
+      ],
+      "sameAs": ["https://www.linkedin.com/company/chela-industrial"]
     }
     </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -46,11 +87,11 @@
 
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center">
+            <a href="/" class="flex items-center shrink-0">
                 <img src="/assets/logo-navy.png" alt="CHELA Industrial UG" width="121" height="32" style="height:32px; width:auto;">
             </a>
-            <div class="flex items-center gap-8">
-                <div class="hidden md:flex items-center gap-7">
+            <div class="flex items-center gap-4 lg:gap-8">
+                <div class="hidden lg:flex items-center gap-7">
                     <a href="/" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#182533] border-[#182533]"><span class="lang-content de lang-active">Home</span>
 <span class="lang-content en">Home</span>
 <span class="lang-content tr">Anasayfa</span></a>
@@ -60,33 +101,40 @@
 <a href="/services" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#495159] border-transparent hover:text-[#182533]"><span class="lang-content de lang-active">Leistungen</span>
 <span class="lang-content en">Services</span>
 <span class="lang-content tr">Hizmetler</span></a>
-
-    <div class="relative group">
-      <a href="/partnership" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#495159] border-transparent hover:text-[#182533] inline-flex items-center gap-1">
-        <span class="lang-content de lang-active">Partnerschaft</span>
+<a href="/partnership" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#495159] border-transparent hover:text-[#182533]"><span class="lang-content de lang-active">Partnerschaft</span>
 <span class="lang-content en">Partnership</span>
-<span class="lang-content tr">Ortaklık</span>
-        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </a>
-      <div class="hidden group-hover:flex flex-col gap-0.5 absolute left-0 top-full mt-3 bg-white border border-[#e2e3e5] rounded-lg shadow-xl p-2 min-w-[280px] z-30">
-        <a href="/partnership/pera" class="block px-4 py-2.5 rounded-md text-sm font-medium text-[#495159] hover:bg-[#f5f5f6] hover:text-[#182533]"><span class="lang-content de lang-active">PERA Mühendislik — Aufzugstechnik</span>
-<span class="lang-content en">PERA Mühendislik — Elevator Technology</span>
-<span class="lang-content tr">PERA Mühendislik — Asansör Teknolojisi</span></a>
-<a href="/partnership/industries" class="block px-4 py-2.5 rounded-md text-sm font-medium text-[#495159] hover:bg-[#f5f5f6] hover:text-[#182533]"><span class="lang-content de lang-active">Andere Branchen</span>
-<span class="lang-content en">Other Industries</span>
-<span class="lang-content tr">Diğer Sektörler</span></a>
-<a href="/partnership/partner" class="block px-4 py-2.5 rounded-md text-sm font-medium text-[#495159] hover:bg-[#f5f5f6] hover:text-[#182533]"><span class="lang-content de lang-active">Partner werden</span>
-<span class="lang-content en">Become a Partner</span>
-<span class="lang-content tr">Partner Olun</span></a>
-      </div>
-    </div>
+<span class="lang-content tr">Ortaklık</span></a>
                 </div>
-                <div class="flex gap-2 text-xs font-black border-l pl-6">
-                    <button onclick="setLang('de')" class="hover:text-[#182533] px-1">DE</button>
-                    <button onclick="setLang('en')" class="hover:text-[#182533] px-1">EN</button>
-                    <button onclick="setLang('tr')" class="hover:text-[#182533] px-1">TR</button>
+                <div class="flex gap-2 text-xs font-black lg:border-l pl-0 lg:pl-6">
+                    <button onclick="setLang('de')" class="hover:text-[#182533] px-1 py-1">DE</button>
+                    <button onclick="setLang('en')" class="hover:text-[#182533] px-1 py-1">EN</button>
+                    <button onclick="setLang('tr')" class="hover:text-[#182533] px-1 py-1">TR</button>
                 </div>
-                <a href="/contact" class="hidden sm:inline-block px-5 py-2.5 rounded-md bg-[#101820] text-white font-semibold text-sm hover:bg-[#182533] transition-colors"><span class="lang-content de lang-active">Kontakt aufnehmen</span>
+                <a href="/contact" class="hidden lg:inline-block px-5 py-2.5 rounded-md bg-[#101820] text-white font-semibold text-sm hover:bg-[#182533] transition-colors"><span class="lang-content de lang-active">Kontakt aufnehmen</span>
+<span class="lang-content en">Contact</span>
+<span class="lang-content tr">İletişim</span></a>
+                <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
+                    class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-[#e2e3e5] text-[#182533] shrink-0">
+                    <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-[#e2e3e5] bg-white max-h-[calc(100vh-64px)] overflow-y-auto">
+            <div class="max-w-6xl mx-auto px-6 py-2 flex flex-col">
+                <a href="/" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#182533] border-[#182533] block py-3 border-b border-[#e2e3e5]"><span class="lang-content de lang-active">Home</span>
+<span class="lang-content en">Home</span>
+<span class="lang-content tr">Anasayfa</span></a>
+<a href="/about" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#495159] border-transparent hover:text-[#182533] block py-3 border-b border-[#e2e3e5]"><span class="lang-content de lang-active">Über uns</span>
+<span class="lang-content en">About</span>
+<span class="lang-content tr">Hakkımızda</span></a>
+<a href="/services" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#495159] border-transparent hover:text-[#182533] block py-3 border-b border-[#e2e3e5]"><span class="lang-content de lang-active">Leistungen</span>
+<span class="lang-content en">Services</span>
+<span class="lang-content tr">Hizmetler</span></a>
+<a href="/partnership" class="text-sm font-bold uppercase tracking-widest pb-1 border-b-2 transition-colors text-[#495159] border-transparent hover:text-[#182533] block py-3 border-b border-[#e2e3e5]"><span class="lang-content de lang-active">Partnerschaft</span>
+<span class="lang-content en">Partnership</span>
+<span class="lang-content tr">Ortaklık</span></a>
+                <a href="/contact" class="mt-4 mb-2 px-5 py-3 rounded-md bg-[#101820] text-white font-semibold text-sm text-center hover:bg-[#182533] transition-colors"><span class="lang-content de lang-active">Kontakt aufnehmen</span>
 <span class="lang-content en">Contact</span>
 <span class="lang-content tr">İletişim</span></a>
             </div>
@@ -100,7 +148,7 @@
             <span class="text-xs font-semibold tracking-widest uppercase text-[#9aa1a8]"><span class="lang-content de lang-active">Internationaler Handel &amp; Projektvermittlung</span>
 <span class="lang-content en">International Trade &amp; Project Mediation</span>
 <span class="lang-content tr">Uluslararası Ticaret ve Proje Arabuluculuğu</span></span>
-            <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight max-w-2xl"><span class="lang-content de lang-active lang-block">Handel &amp; Projektvermittlung für die Industrie.</span>
+            <h1 class="font-display break-words text-4xl md:text-5xl font-bold leading-tight max-w-2xl"><span class="lang-content de lang-active lang-block">Handel &amp; Projektvermittlung für die Industrie.</span>
 <span class="lang-content en lang-block">Trade &amp; project mediation for industry.</span>
 <span class="lang-content tr lang-block">Endüstri için ticaret ve proje arabuluculuğu.</span></h1>
             <p class="text-lg text-[#c7c9cb] max-w-xl leading-relaxed"><span class="lang-content de lang-active lang-block">Ihr strategischer Partner im globalen Industriesektor — wir verbinden Hersteller, Ingenieure und Projektträger über Grenzen hinweg.</span>
@@ -123,7 +171,7 @@
                 <span class="text-xs font-semibold tracking-widest uppercase text-[#182533]"><span class="lang-content de lang-active">Leistungen</span>
 <span class="lang-content en">Services</span>
 <span class="lang-content tr">Hizmetler</span></span>
-                <h2 class="font-display text-3xl font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Handel, Vermittlung und B2B-Beschaffung — über alle Industriezweige hinweg.</span>
+                <h2 class="font-display break-words text-3xl font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Handel, Vermittlung und B2B-Beschaffung — über alle Industriezweige hinweg.</span>
 <span class="lang-content en lang-block">Trade, mediation and B2B sourcing — across every branch of industry.</span>
 <span class="lang-content tr lang-block">Tüm sektörlerde ticaret, arabuluculuk ve B2B tedarik.</span></h2>
             </div>
@@ -132,7 +180,7 @@
             <div class="w-14 h-14 rounded-xl bg-[#eef0f1] text-[#182533] flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="8" width="10" height="9" rx="1"></rect><path d="M9 8V6a3 3 0 0 1 6 0v2"></path><path d="M3 12h2"></path><path d="M19 12h2"></path></svg>
             </div>
-            <h3 class="font-display text-lg font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Internationaler Handel</span>
+            <h3 class="font-display break-words text-lg font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Internationaler Handel</span>
 <span class="lang-content en lang-block">International Trade</span>
 <span class="lang-content tr lang-block">Uluslararası Ticaret</span></h3>
             <p class="text-[#63686d] text-sm leading-relaxed"><span class="lang-content de lang-active lang-block">Strategische Beschaffung und Vermittlung von Industrieanlagen und -komponenten für globale Märkte.</span>
@@ -143,7 +191,7 @@
             <div class="w-14 h-14 rounded-xl bg-[#eef0f1] text-[#182533] flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2.2"></circle><circle cx="18" cy="7" r="2.2"></circle><circle cx="12" cy="18" r="2.2"></circle><path d="M7.8 8.6 10.4 16.2"></path><path d="M16.2 8.6 13.6 16.2"></path><path d="M8.2 7h7.6"></path></svg>
             </div>
-            <h3 class="font-display text-lg font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Projektvermittlung</span>
+            <h3 class="font-display break-words text-lg font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Projektvermittlung</span>
 <span class="lang-content en lang-block">Project Mediation</span>
 <span class="lang-content tr lang-block">Proje Arabuluculuğu</span></h3>
             <p class="text-[#63686d] text-sm leading-relaxed"><span class="lang-content de lang-active lang-block">Wir verbinden Hersteller, Lieferanten und Abnehmer über Branchen und Ländergrenzen hinweg.</span>
@@ -154,7 +202,7 @@
             <div class="w-14 h-14 rounded-xl bg-[#eef0f1] text-[#182533] flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.5"></rect><polyline points="10 9 12 6.5 14 9"></polyline><polyline points="10 15 12 17.5 14 15"></polyline></svg>
             </div>
-            <h3 class="font-display text-lg font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Aufzugssysteme</span>
+            <h3 class="font-display break-words text-lg font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Aufzugssysteme</span>
 <span class="lang-content en lang-block">Elevator Systems</span>
 <span class="lang-content tr lang-block">Asansör Sistemleri</span></h3>
             <p class="text-[#63686d] text-sm leading-relaxed"><span class="lang-content de lang-active lang-block">Spezialisierter Handel mit Aufzugs- und Fördertechnik — in Partnerschaft mit PERA Mühendislik.</span>
@@ -171,7 +219,7 @@
                 <span class="text-xs font-semibold tracking-widest uppercase text-[#9aa1a8]"><span class="lang-content de lang-active">Partnerschaft</span>
 <span class="lang-content en">Partnership</span>
 <span class="lang-content tr">Ortaklık</span></span>
-                <h2 class="font-display text-2xl font-semibold text-white leading-snug"><span class="lang-content de lang-active lang-block">Europäische Vertretung für PERA Mühendislik</span>
+                <h2 class="font-display break-words text-2xl font-semibold text-white leading-snug"><span class="lang-content de lang-active lang-block">Europäische Vertretung für PERA Mühendislik</span>
 <span class="lang-content en lang-block">European representation for PERA Mühendislik</span>
 <span class="lang-content tr lang-block">PERA Mühendislik için Avrupa temsilciliği</span></h2>
                 <p class="text-[15px] leading-relaxed text-[#c7c9cb]"><span class="lang-content de lang-active lang-block">Im Rahmen unseres virtuellen Bürokonzepts arbeiten wir eng mit PERA Mühendislik zusammen — einem türkischen Ingenieurunternehmen. Als benannter europäischer Vertreter schaffen wir den direkten Zugang zwischen europäischen Projekten und türkischer Ingenieurskompetenz.</span>
@@ -197,12 +245,12 @@
 
     <section class="bg-[#f5f5f6] py-20 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-display text-2xl font-semibold text-[#101820] mb-11"><span class="lang-content de lang-active">Warum CHELA Industrial</span>
+            <h2 class="font-display break-words text-2xl font-semibold text-[#101820] mb-11"><span class="lang-content de lang-active">Warum CHELA Industrial</span>
 <span class="lang-content en">Why CHELA Industrial</span>
 <span class="lang-content tr">Neden CHELA Industrial</span></h2>
             <div class="grid md:grid-cols-4 gap-8">
             <div class="flex flex-col gap-2.5">
-                <span class="font-display text-2xl font-bold text-[#182533]">01</span>
+                <span class="font-display break-words text-2xl font-bold text-[#182533]">01</span>
                 <h3 class="text-base font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">International vernetzt</span>
 <span class="lang-content en lang-block">Globally connected</span>
 <span class="lang-content tr lang-block">Küresel bağlantılar</span></h3>
@@ -211,7 +259,7 @@
 <span class="lang-content tr lang-block">Dünya çapında üreticiler, tedarikçiler ve alıcılar arasında ticaret köprüleri — Avrupa ve Türkiye odaklı.</span></p>
             </div>
             <div class="flex flex-col gap-2.5">
-                <span class="font-display text-2xl font-bold text-[#182533]">02</span>
+                <span class="font-display break-words text-2xl font-bold text-[#182533]">02</span>
                 <h3 class="text-base font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Ingenieursnah</span>
 <span class="lang-content en lang-block">Engineering-grounded</span>
 <span class="lang-content tr lang-block">Mühendislik odaklı</span></h3>
@@ -220,7 +268,7 @@
 <span class="lang-content tr lang-block">Sadece ticaretle değil, gerçek bir mühendislik ortaklığıyla destekleniyor.</span></p>
             </div>
             <div class="flex flex-col gap-2.5">
-                <span class="font-display text-2xl font-bold text-[#182533]">03</span>
+                <span class="font-display break-words text-2xl font-bold text-[#182533]">03</span>
                 <h3 class="text-base font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Dreisprachig</span>
 <span class="lang-content en lang-block">Trilingual</span>
 <span class="lang-content tr lang-block">Üç dilli</span></h3>
@@ -229,7 +277,7 @@
 <span class="lang-content tr lang-block">Almanca, İngilizce ve Türkçe iletişim — sorunsuz bir şekilde.</span></p>
             </div>
             <div class="flex flex-col gap-2.5">
-                <span class="font-display text-2xl font-bold text-[#182533]">04</span>
+                <span class="font-display break-words text-2xl font-bold text-[#182533]">04</span>
                 <h3 class="text-base font-semibold text-[#101820]"><span class="lang-content de lang-active lang-block">Schlank &amp; direkt</span>
 <span class="lang-content en lang-block">Lean &amp; direct</span>
 <span class="lang-content tr lang-block">Yalın ve doğrudan</span></h3>
@@ -243,7 +291,7 @@
 
     <section class="bg-[#182533] py-20 px-6 text-center">
         <div class="max-w-xl mx-auto flex flex-col items-center gap-5">
-            <h2 class="font-display text-3xl font-semibold text-white"><span class="lang-content de lang-active">Bereit für den nächsten Schritt?</span>
+            <h2 class="font-display break-words text-3xl font-semibold text-white"><span class="lang-content de lang-active">Bereit für den nächsten Schritt?</span>
 <span class="lang-content en">Ready for the next step?</span>
 <span class="lang-content tr">Bir sonraki adıma hazır mısınız?</span></h2>
             <p class="text-[15px] text-[#c7ccd1] leading-relaxed"><span class="lang-content de lang-active lang-block">Sprechen Sie direkt mit uns über Ihr Anliegen — vom internationalen Handel bis zur Projektvermittlung, gleich welche Branche.</span>
@@ -260,10 +308,16 @@
         <div class="max-w-6xl mx-auto flex flex-col gap-12">
             <div class="flex flex-col md:flex-row justify-between gap-10 pb-11 border-b border-white/10">
                 <div class="max-w-xs flex flex-col gap-4">
-                    <img src="/assets/logo-white.png" alt="CHELA Industrial UG" width="129" height="34" style="height:34px; width:auto;">
+                    <img src="/assets/logo-white.png" alt="CHELA Industrial UG" width="129" height="34" style="height:34px; width:129px; object-fit:contain; align-self:flex-start; flex-shrink:0; display:block;">
                     <p class="text-sm leading-relaxed"><span class="lang-content de lang-active lang-block">Handel &amp; Projektvermittlung für die Industrie. Ihr strategischer Partner im globalen Industriesektor.</span>
 <span class="lang-content en lang-block">Trade &amp; project mediation for industry. Your strategic partner in the global industrial sector.</span>
 <span class="lang-content tr lang-block">Endüstri için ticaret ve proje arabuluculuğu. Küresel endüstriyel sektördeki stratejik ortağınız.</span></p>
+                    <a href="https://www.linkedin.com/company/chela-industrial" target="_blank" rel="noopener" aria-label="LinkedIn"
+                       class="inline-flex items-center justify-center w-9 h-9 rounded-md border border-white/15 text-white hover:bg-white/10 hover:border-white/30 transition-colors">
+                        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
+                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM.24 8.25h4.47V23H.24V8.25zM8.24 8.25h4.29v2.01h.06c.6-1.13 2.06-2.32 4.24-2.32 4.53 0 5.37 2.98 5.37 6.86V23h-4.47v-6.43c0-1.53-.03-3.5-2.13-3.5-2.14 0-2.47 1.67-2.47 3.39V23H8.24V8.25z"></path>
+                        </svg>
+                    </a>
                 </div>
                 <div class="flex flex-wrap gap-12">
                     <div class="flex flex-col gap-3.5">
@@ -332,6 +386,28 @@
                 if (saved && saved !== 'de') { setLang(saved); }
             } catch (e) {}
         })();
+
+        function toggleMobileMenu() {
+            var menu = document.getElementById('mobile-menu');
+            var btn = document.getElementById('mobile-menu-btn');
+            var iconOpen = document.getElementById('menu-icon-open');
+            var iconClose = document.getElementById('menu-icon-close');
+            if (!menu || !btn) return;
+            var isOpen = !menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            if (iconOpen) iconOpen.classList.toggle('hidden');
+            if (iconClose) iconClose.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden', !isOpen);
+        }
+        // Close the mobile menu automatically if the viewport is widened past
+        // the mobile breakpoint (e.g. rotating a tablet, resizing a window).
+        window.addEventListener('resize', function () {
+            var menu = document.getElementById('mobile-menu');
+            if (menu && window.innerWidth >= 1024 && !menu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        });
     </script>
 
 </body>
