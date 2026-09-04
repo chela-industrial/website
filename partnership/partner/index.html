@@ -160,12 +160,7 @@
     <section class="bg-white py-20 px-6">
         <div class="max-w-5xl mx-auto grid md:grid-cols-[1.3fr_0.8fr] gap-14">
 
-            <form action="https://formsubmit.co/info@chela-industrial.de" method="POST" class="flex flex-col gap-5 max-w-lg">
-                <input type="hidden" name="_subject" value="Neue Partneranfrage von der Website / New partner inquiry from the website">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://www.chela-industrial.de/partnership/partner">
-                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <form onsubmit="return submitForm(event, 'https://formspree.io/f/xwlkqqkb')" class="flex flex-col gap-5 max-w-lg">
                 <div class="grid sm:grid-cols-2 gap-[18px]">
                     <label class="flex flex-col gap-2">
                         <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Name</span>
@@ -203,6 +198,12 @@
                 <button type="submit" class="self-start mt-1 px-8 py-3.5 rounded-md bg-[#182533] text-white font-semibold text-sm hover:bg-[#3a4a5c] transition-colors"><span class="lang-content de lang-active">Anfrage senden</span>
 <span class="lang-content en">Send inquiry</span>
 <span class="lang-content tr">Talebi gönder</span></button>
+                <p class="submit-note-ok text-[13px] text-[#63686d] leading-relaxed" hidden><span class="lang-content de lang-active lang-block">Danke — Ihre Anfrage ist bei uns eingegangen. Wir melden uns so schnell wie möglich bei Ihnen.</span>
+<span class="lang-content en lang-block">Thank you — your inquiry has been received. We'll get back to you as soon as possible.</span>
+<span class="lang-content tr lang-block">Teşekkürler — talebiniz bize ulaştı. En kısa sürede size geri döneceğiz.</span></p>
+                <p class="submit-note-error text-[13px] leading-relaxed" style="color:#b3261e;" hidden><span class="lang-content de lang-active lang-block">Da ist leider etwas schiefgelaufen. Bitte schreiben Sie uns direkt an info@chela-industrial.de.</span>
+<span class="lang-content en lang-block">Something went wrong on our end. Please email us directly at info@chela-industrial.de.</span>
+<span class="lang-content tr lang-block">Maalesef bir sorun oluştu. Lütfen doğrudan info@chela-industrial.de adresine yazın.</span></p>
             </form>
 
             <div class="flex flex-col gap-6">
@@ -347,6 +348,41 @@
                 toggleMobileMenu();
             }
         });
+
+        // The contact and "become a partner" forms submit to Formspree
+        // (https://formspree.io/f/...) via a background fetch() so the
+        // visitor never leaves the page. On success we show an inline
+        // confirmation; if the request fails for any reason, we show an
+        // error note with a mailto: fallback so the message is never
+        // silently lost.
+        function submitForm(event, endpoint) {
+            event.preventDefault();
+            var form = event.target;
+            var btn = form.querySelector('button[type="submit"]');
+            var noteOk = form.querySelector('.submit-note-ok');
+            var noteError = form.querySelector('.submit-note-error');
+            if (noteOk) noteOk.hidden = true;
+            if (noteError) noteError.hidden = true;
+            if (btn) btn.disabled = true;
+            var data = new FormData(form);
+            fetch(endpoint, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(function (response) {
+                if (response.ok) {
+                    if (noteOk) noteOk.hidden = false;
+                    form.reset();
+                } else {
+                    if (noteError) noteError.hidden = false;
+                }
+            }).catch(function () {
+                if (noteError) noteError.hidden = false;
+            }).finally(function () {
+                if (btn) btn.disabled = false;
+            });
+            return false;
+        }
     </script>
 
 </body>
