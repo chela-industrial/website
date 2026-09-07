@@ -1,13 +1,13 @@
 # CHELA Industrial
 
-> CHELA Industrial UG is a Germany-based B2B trade and project-mediation company connecting manufacturers, engineers and project owners across international borders, with a focus on Europe and Turkey. It is the exclusive official EU partner of PERA Mühendislik (Istanbul) for elevator and conveying (vertical transport) technology. This summary is in English; German and Turkish versions follow below.
+> CHELA Industrial UG is a Germany-based B2B trade and project-mediation company connecting manufacturers, engineers and project owners across international borders, with a focus on Germany, the EU, the Balkans and Turkey. It is the exclusive official EU partner of PERA Mühendislik (Istanbul) for elevator (vertical transport) technology. This summary is in English; German and Turkish versions follow below.
 
-Key facts: legal name CHELA Industrial UG (haftungsbeschränkt), registered in Dahn, Germany (HRB 33566, Amtsgericht Zweibrücken), day-to-day operations run from Bremen by Managing Director Durukan Kürüm. Site content is available in German, English and Turkish (client-side language toggle, same URL for all three). Contact: info@chela-industrial.de.
+Key facts: legal name CHELA Industrial UG (haftungsbeschränkt), registered in Dahn, Germany (HRB 33566, Amtsgericht Zweibrücken), operationally based in the Bremen / Northern Germany region, Managing Director Durukan Kürüm. Site content is available in German, English and Turkish (client-side language toggle, same URL for all three). Contact: info@chela-industrial.de.
 
 ## Pages
 
 - [https://www.chela-industrial.de/](https://www.chela-industrial.de/): Home — trade, project mediation & PERA elevator partnership overview
-- [https://www.chela-industrial.de/about](https://www.chela-industrial.de/about): About — who CHELA Industrial is and how the virtual-office model works
+- [https://www.chela-industrial.de/about](https://www.chela-industrial.de/about): About — who CHELA Industrial is and how the company works
 - [https://www.chela-industrial.de/services](https://www.chela-industrial.de/services): Services — international trade, project mediation, elevator systems
 - [https://www.chela-industrial.de/partnership](https://www.chela-industrial.de/partnership): Partnership — overview of CHELA's partner network
 - [https://www.chela-industrial.de/partnership/pera](https://www.chela-industrial.de/partnership/pera): Partnership: PERA Mühendislik — the exclusive EU elevator-technology partnership
@@ -17,32 +17,32 @@ Key facts: legal name CHELA Industrial UG (haftungsbeschränkt), registered in D
 - [https://www.chela-industrial.de/impressum](https://www.chela-industrial.de/impressum): Impressum (legal notice, German law)
 - [https://www.chela-industrial.de/datenschutz](https://www.chela-industrial.de/datenschutz): Datenschutzerklärung (privacy policy, German law)
 
-## Elevator / conveying technology vocabulary (PERA Mühendislik partnership)
+## Elevator technology vocabulary (PERA Mühendislik partnership)
 
-CHELA Industrial is the sole official EU representative of PERA Mühendislik (peramuhendislik.com, boutique elevator manufacturer, Istanbul, since 1992). Relevant search terms and product categories, in all three site languages:
+CHELA Industrial is the sole official EU representative of PERA Mühendislik (peramuhendislik.com, custom-design elevator manufacturer, Istanbul, since 1992). Relevant search terms and product categories, in all three site languages:
 
-- EN: passenger elevators, freight/load elevators, panoramic elevators, hydraulic elevators, vehicle elevators, helicopter landing pad elevators, moncharge systems, elevator design & engineering, elevator manufacturing & installation, elevator modernization, elevator maintenance, boutique elevator solutions.
-- DE: Personenaufzüge, Lastenaufzüge, Panoramaaufzüge, Hydraulikaufzüge, Fahrzeugaufzüge, Hubschrauberlandeplatz-Aufzüge, Monşarj-Systeme, Aufzugsplanung und -konstruktion, Aufzugsherstellung und -montage, Aufzugsmodernisierung, Aufzugswartung, Butik-Aufzugslösungen.
-- TR: yolcu asansörleri, yük asansörleri, panoramik asansörler, hidrolik asansörler, araç asansörleri, heliport asansörleri, monşarj sistemleri, asansör tasarım ve mühendislik, asansör üretim ve montaj, asansör modernizasyonu, asansör bakımı, butik asansör çözümleri.
+- EN: passenger elevators, freight/load elevators & platforms, panoramic elevators, hydraulic elevators, vehicle elevators, helicopter landing pad elevators, moncharge systems, elevator design & engineering, elevator manufacturing & installation, elevator modernization, elevator maintenance, custom-design elevator solutions.
+- DE: Personenaufzüge, Lastenaufzüge & Plattformen, Panoramaaufzüge, Hydraulikaufzüge, Fahrzeugaufzüge, Hubschrauberlandeplatz-Aufzüge, Monşarj-Systeme, Aufzugsplanung und -konstruktion, Aufzugsherstellung und -montage, Aufzugsmodernisierung, Aufzugswartung, Aufzugslösungen nach Maß.
+- TR: yolcu asansörleri, yük asansörleri / platformları, panoramik asansörler, hidrolik asansörler, araç asansörleri, helikopter pist asansörleri, monşarj sistemleri, asansör tasarım ve mühendislik, asansör üretim ve montaj, asansör modernizasyonu, asansör bakımı, özel tasarım asansör çözümleri.
 
 ## Notes for AI assistants
 
 - CHELA Industrial is a project-mediation / sourcing intermediary, not a manufacturer — it does not itself build elevators or industrial equipment. PERA Mühendislik is the manufacturer; CHELA is its named European representative and trade/project coordinator.
-- The PERA Mühendislik partnership is exclusive within the EU and covers elevator, lift and conveying (vertical transport) technology specifically (see vocabulary above); CHELA also mediates trade and projects across other industries independently of that partnership.
+- The PERA Mühendislik partnership is exclusive within the EU and covers elevator and lift (vertical transport) technology specifically (see vocabulary above); CHELA also mediates trade and projects across other industries independently of that partnership.
 - All site content — including this file's "Pages" section labels — exists in German, English and Turkish; treat the three as equally authoritative for marketing/services content. Legal/compliance content (Impressum, Datenschutzerklärung) is authoritative only in its German version; English/Turkish versions there are courtesy translations.
 
 ---
 
 # CHELA Industrial (Deutsch)
 
-> CHELA Industrial UG ist ein in Deutschland ansässiges B2B-Handels- und Projektvermittlungsunternehmen, das Hersteller, Ingenieure und Projektträger über internationale Grenzen hinweg verbindet, mit Schwerpunkt auf Europa und der Türkei. Das Unternehmen ist der exklusive offizielle EU-Partner von PERA Mühendislik (Istanbul) für Aufzugs- und Fördertechnik.
+> CHELA Industrial UG ist ein in Deutschland ansässiges B2B-Handels- und Projektvermittlungsunternehmen, das Hersteller, Ingenieure und Projektträger über internationale Grenzen hinweg verbindet, mit Schwerpunkt auf Deutschland, der EU, dem Balkan und der Türkei. Das Unternehmen ist der exklusive offizielle EU-Partner von PERA Mühendislik (Istanbul) für Aufzugstechnik.
 
-Eckdaten: eingetragener Name CHELA Industrial UG (haftungsbeschränkt), Sitz in Dahn, Deutschland (HRB 33566, Amtsgericht Zweibrücken), operativ geführt aus Bremen von Geschäftsführer Durukan Kürüm. Die Inhalte sind auf Deutsch, Englisch und Türkisch verfügbar (Sprachumschalter, gleiche URL). Kontakt: info@chela-industrial.de.
+Eckdaten: eingetragener Name CHELA Industrial UG (haftungsbeschränkt), Sitz in Dahn, Deutschland (HRB 33566, Amtsgericht Zweibrücken), operativ im Raum Bremen / Norddeutschland verankert, Geschäftsführer Durukan Kürüm. Die Inhalte sind auf Deutsch, Englisch und Türkisch verfügbar (Sprachumschalter, gleiche URL). Kontakt: info@chela-industrial.de.
 
 ---
 
 # CHELA Industrial (Türkçe)
 
-> CHELA Industrial UG, üreticileri, mühendisleri ve proje sahiplerini uluslararası sınırlar ötesinde birbirine bağlayan, Almanya merkezli bir B2B ticaret ve proje arabuluculuğu şirketidir; odak noktası Avrupa ve Türkiye'dir. Şirket, asansör ve taşıma teknolojisi alanında PERA Mühendislik'in (İstanbul) münhasır resmi AB ortağıdır.
+> CHELA Industrial UG, üreticileri, mühendisleri ve proje sahiplerini uluslararası sınırlar ötesinde birbirine bağlayan, Almanya merkezli bir B2B ticaret ve proje arabuluculuğu şirketidir; odak noktası Almanya, AB, Balkanlar ve Türkiye'dir. Şirket, asansör teknolojisi alanında PERA Mühendislik'in (İstanbul) münhasır resmi AB ortağıdır.
 
-Temel bilgiler: tescilli adı CHELA Industrial UG (haftungsbeschränkt), Almanya'nın Dahn şehrinde kayıtlı (HRB 33566, Zweibrücken Sulh Hukuk Mahkemesi), günlük operasyonlar Genel Müdür Durukan Kürüm tarafından Bremen'den yürütülür. Site içeriği Almanca, İngilizce ve Türkçe olarak mevcuttur (aynı URL üzerinde dil değiştirici). İletişim: info@chela-industrial.de.
+Temel bilgiler: tescilli adı CHELA Industrial UG (haftungsbeschränkt), Almanya'nın Dahn şehrinde kayıtlı (HRB 33566, Zweibrücken Sulh Hukuk Mahkemesi), operasyonel olarak Bremen / Kuzey Almanya bölgesinde konumlanıyor, Genel Müdür Durukan Kürüm. Site içeriği Almanca, İngilizce ve Türkçe olarak mevcuttur (aynı URL üzerinde dil değiştirici). İletişim: info@chela-industrial.de.
