@@ -272,6 +272,32 @@
                     </a>
                 </div>
             </div>
+
+            <div class="mt-4 relative overflow-hidden rounded-xl flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 p-6 sm:p-7"
+                 style="background:linear-gradient(100deg, #0d1922 0%, #182533 55%, #223247 100%); border:1px dashed rgba(255,255,255,.28);">
+                <div class="flex-shrink-0 relative z-10 w-[54px] h-[54px] rounded-lg flex items-center justify-center" style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"></rect><path d="M8 8h8M8 12h8M8 16h4"></path></svg>
+                </div>
+                <div class="flex-1 relative z-10 text-white min-w-0">
+                    <span class="block text-[10.5px] font-bold tracking-widest uppercase" style="color:#9ad0c2;"><span class="lang-content de lang-active">Technische Anfrage</span>
+<span class="lang-content en">Technical Inquiry</span>
+<span class="lang-content tr">Teknik Talep</span></span>
+                    <h3 class="font-display text-[16.5px] font-semibold mt-1"><span class="lang-content de lang-active">Aufzugs-Anfrage stellen</span>
+<span class="lang-content en">Request an Elevator Quote</span>
+<span class="lang-content tr">Asansör Teklifi İsteyin</span></h3>
+                    <p class="text-[12.5px] leading-relaxed mt-1" style="color:#c7cdd3;"><span class="lang-content de lang-active lang-block">Geben Sie Ihre Eckdaten ein — wir erstellen Ihnen ein unverbindliches Angebot.</span>
+<span class="lang-content en lang-block">Enter your key details — we'll prepare a non-binding quote for you.</span>
+<span class="lang-content tr lang-block">Temel bilgilerinizi girin — size bağlayıcı olmayan bir teklif hazırlayalım.</span></p>
+                </div>
+                <div class="relative z-10 flex-shrink-0">
+                    <button type="button" onclick="openQuoteForm()" class="px-5 py-3 rounded-md bg-white text-[#101820] font-bold text-[13px] inline-flex items-center gap-2 whitespace-nowrap">
+                        <span class="lang-content de lang-active">Anfrage stellen</span>
+<span class="lang-content en">Request a quote</span>
+<span class="lang-content tr">Teklif isteyin</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -370,6 +396,328 @@
         </div>
     </div>
 
+    <div id="quote-modal" class="fixed inset-0 z-[100] items-center justify-center p-4" style="display:none; background:rgba(16,24,32,0.75);" onclick="if(event.target===this) closeQuoteForm();">
+        <div class="w-full rounded-xl overflow-hidden shadow-2xl flex flex-col" style="max-width:720px; max-height:90vh; background:#f5f5f6;">
+            <div class="flex items-center justify-between gap-3 px-4 py-3 text-white flex-shrink-0" style="background:#101820;">
+                <div class="min-w-0">
+                    <div class="text-[13.5px] font-bold truncate"><span class="lang-content de lang-active">Aufzugs-Anfrage</span>
+<span class="lang-content en">Elevator Inquiry</span>
+<span class="lang-content tr">Asansör Talebi</span></div>
+                    <div class="text-[10.5px] truncate" style="color:#c7c9cb;"><span class="lang-content de lang-active">Technisches Anfrageformular für PERA-Hydraulikaufzüge</span>
+<span class="lang-content en">Technical inquiry form for PERA hydraulic elevators</span>
+<span class="lang-content tr">PERA hidrolik asansörleri için teknik talep formu</span></div>
+                </div>
+                <button type="button" onclick="closeQuoteForm()" aria-label="Schließen" class="w-8 h-8 rounded-md flex items-center justify-center text-white flex-shrink-0" style="background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.18);">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-1.5 px-4 py-2.5" style="background:#eceeef; border-bottom:1px solid #e2e3e5; overflow-x:auto;"><a href="#q-s1" class="flex-shrink-0 text-[11.5px] font-semibold text-[#495159] bg-white border border-[#e2e3e5] px-2.5 py-1.5 rounded-full whitespace-nowrap"><b class="text-[#182533] mr-1">1</b><span class="lang-content de lang-active">Kontakt</span>
+<span class="lang-content en">Contact</span>
+<span class="lang-content tr">İletişim</span></a><a href="#q-s2" class="flex-shrink-0 text-[11.5px] font-semibold text-[#495159] bg-white border border-[#e2e3e5] px-2.5 py-1.5 rounded-full whitespace-nowrap"><b class="text-[#182533] mr-1">2</b><span class="lang-content de lang-active">Gebäude</span>
+<span class="lang-content en">Building</span>
+<span class="lang-content tr">Bina</span></a><a href="#q-s3" class="flex-shrink-0 text-[11.5px] font-semibold text-[#495159] bg-white border border-[#e2e3e5] px-2.5 py-1.5 rounded-full whitespace-nowrap"><b class="text-[#182533] mr-1">3</b><span class="lang-content de lang-active">Technik</span>
+<span class="lang-content en">Specifications</span>
+<span class="lang-content tr">Teknik</span></a><a href="#q-s4" class="flex-shrink-0 text-[11.5px] font-semibold text-[#495159] bg-white border border-[#e2e3e5] px-2.5 py-1.5 rounded-full whitespace-nowrap"><b class="text-[#182533] mr-1">4</b><span class="lang-content de lang-active">Notizen</span>
+<span class="lang-content en">Notes</span>
+<span class="lang-content tr">Notlar</span></a><a href="#q-s5" class="flex-shrink-0 text-[11.5px] font-semibold text-[#495159] bg-white border border-[#e2e3e5] px-2.5 py-1.5 rounded-full whitespace-nowrap"><b class="text-[#182533] mr-1">5</b><span class="lang-content de lang-active">Quelle</span>
+<span class="lang-content en">Source</span>
+<span class="lang-content tr">Kaynak</span></a>
+            </div>
+
+            <form id="quote-form" onsubmit="return submitForm(event, 'https://formspree.io/f/xwlkqqkb')" class="flex-1 overflow-y-auto px-5 sm:px-6 pt-5 pb-2">
+
+                <div id="q-s1" class="bg-white border border-[#e2e3e5] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[#101820] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">1</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[#101820]"><span class="lang-content de lang-active">Kontakt &amp; Anfrage</span>
+<span class="lang-content en">Contact &amp; Inquiry</span>
+<span class="lang-content tr">İletişim ve Talep</span></h4>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-[14px] mb-[14px]">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Firma</span>
+<span class="lang-content en">Company</span>
+<span class="lang-content tr">Firma</span> <span style="color:#c62828;">*</span></span>
+                            <input type="text" name="company" required placeholder="Musterfirma GmbH" class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]">
+                        </label>
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Ansprechpartner</span>
+<span class="lang-content en">Contact person</span>
+<span class="lang-content tr">Yetkili Kişi</span> <span style="color:#c62828;">*</span></span>
+                            <input type="text" name="contact_person" required class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]">
+                        </label>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-[14px] mb-[14px]">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">E-Mail</span>
+<span class="lang-content en">Email</span>
+<span class="lang-content tr">E-posta</span> <span style="color:#c62828;">*</span></span>
+                            <input type="email" name="email" required class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]">
+                        </label>
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Telefon</span>
+<span class="lang-content en">Phone</span>
+<span class="lang-content tr">Telefon</span></span>
+                            <input type="tel" name="phone" class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]">
+                        </label>
+                    </div>
+                    <label class="flex flex-col gap-2">
+                        <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Referenz</span>
+<span class="lang-content en">Reference</span>
+<span class="lang-content tr">Referans</span> <span class="font-medium text-[#999da2]">(<span class="lang-content de lang-active">optional</span>
+<span class="lang-content en">optional</span>
+<span class="lang-content tr">opsiyonel</span>)</span></span>
+                        <input type="text" name="reference" class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]">
+                    </label>
+                </div>
+
+                <div id="q-s2" class="bg-white border border-[#e2e3e5] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[#101820] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">2</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[#101820]"><span class="lang-content de lang-active">Gebäude &amp; Verwendungszweck</span>
+<span class="lang-content en">Building &amp; Intended Use</span>
+<span class="lang-content tr">Bina ve Kullanım Amacı</span></h4>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-[14px]">
+                        <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Gebäudetyp</span>
+<span class="lang-content en">Type of building</span>
+<span class="lang-content tr">Bina Tipi</span></span>
+                        <div class="flex flex-wrap gap-2"><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_type" value="Business" class="sr-only"><span class="lang-content de lang-active">Gewerbe</span>
+<span class="lang-content en">Business</span>
+<span class="lang-content tr">Ticari</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_type" value="Factory" class="sr-only"><span class="lang-content de lang-active">Fabrik</span>
+<span class="lang-content en">Factory</span>
+<span class="lang-content tr">Fabrika</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_type" value="Residence" class="sr-only"><span class="lang-content de lang-active">Wohngebäude</span>
+<span class="lang-content en">Residence</span>
+<span class="lang-content tr">Konut</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_type" value="School" class="sr-only"><span class="lang-content de lang-active">Schule</span>
+<span class="lang-content en">School</span>
+<span class="lang-content tr">Okul</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_type" value="Hospital" class="sr-only"><span class="lang-content de lang-active">Krankenhaus</span>
+<span class="lang-content en">Hospital</span>
+<span class="lang-content tr">Hastane</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_type" value="Other" class="sr-only"><span class="lang-content de lang-active">Sonstiges</span>
+<span class="lang-content en">Other</span>
+<span class="lang-content tr">Diğer</span>
+            </label></div>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-[14px]">
+                        <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Gebäudezustand</span>
+<span class="lang-content en">Condition of building</span>
+<span class="lang-content tr">Bina Durumu</span></span>
+                        <div class="flex flex-wrap gap-2"><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_condition" value="Existing" class="sr-only"><span class="lang-content de lang-active">Bestehend</span>
+<span class="lang-content en">Existing</span>
+<span class="lang-content tr">Mevcut</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_condition" value="Under construction" class="sr-only"><span class="lang-content de lang-active">Im Bau</span>
+<span class="lang-content en">Under construction</span>
+<span class="lang-content tr">İnşaat Halinde</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="radio" name="building_condition" value="Design stage" class="sr-only"><span class="lang-content de lang-active">In Planung</span>
+<span class="lang-content en">Design stage</span>
+<span class="lang-content tr">Planlama Aşamasında</span>
+            </label></div>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-[14px]">
+                        <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Verwendungszweck</span>
+<span class="lang-content en">Intended use</span>
+<span class="lang-content tr">Kullanım Amacı</span> <span class="font-medium text-[#999da2]">(<span class="lang-content de lang-active">Mehrfachauswahl</span>
+<span class="lang-content en">select all that apply</span>
+<span class="lang-content tr">birden fazla seçilebilir</span>)</span></span>
+                        <div class="flex flex-wrap gap-2"><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="checkbox" name="intended_use" value="Passenger" class="sr-only"><span class="lang-content de lang-active">Personenaufzug</span>
+<span class="lang-content en">Passenger</span>
+<span class="lang-content tr">Yolcu</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="checkbox" name="intended_use" value="Load" class="sr-only"><span class="lang-content de lang-active">Lastenaufzug</span>
+<span class="lang-content en">Load</span>
+<span class="lang-content tr">Yük</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="checkbox" name="intended_use" value="Load cabin" class="sr-only"><span class="lang-content de lang-active">Lastenkabine</span>
+<span class="lang-content en">Load cabin</span>
+<span class="lang-content tr">Yük Kabini</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="checkbox" name="intended_use" value="Vehicle platform" class="sr-only"><span class="lang-content de lang-active">Fahrzeugplattform</span>
+<span class="lang-content en">Vehicle platform</span>
+<span class="lang-content tr">Araç Platformu</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="checkbox" name="intended_use" value="Fire elevator" class="sr-only"><span class="lang-content de lang-active">Feuerwehraufzug</span>
+<span class="lang-content en">Fire elevator</span>
+<span class="lang-content tr">İtfaiye Asansörü</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="checkbox" name="intended_use" value="Disabled access" class="sr-only"><span class="lang-content de lang-active">Barrierefrei</span>
+<span class="lang-content en">Disabled access</span>
+<span class="lang-content tr">Engelli Erişimi</span>
+            </label><label class="inline-flex items-center px-3.5 py-1.5 border border-[#e2e3e5] rounded-full text-[12.5px] font-medium text-[#495159] bg-white cursor-pointer select-none has-[:checked]:bg-[#101820] has-[:checked]:text-white has-[:checked]:border-[#101820] transition-colors">
+                <input type="checkbox" name="intended_use" value="Other" class="sr-only"><span class="lang-content de lang-active">Sonstiges</span>
+<span class="lang-content en">Other</span>
+<span class="lang-content tr">Diğer</span>
+            </label></div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-[14px]">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Einbauort</span>
+<span class="lang-content en">Place of installation</span>
+<span class="lang-content tr">Kurulum Yeri</span></span>
+                            <input type="text" name="location" placeholder="Stadt, Land" class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]">
+                        </label>
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Gewünschter Termin</span>
+<span class="lang-content en">Required deadline</span>
+<span class="lang-content tr">İstenen Teslim Tarihi</span></span>
+                            <input type="text" name="deadline" placeholder="z. B. Q1 2027" class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]">
+                        </label>
+                    </div>
+                </div>
+
+                <div id="q-s3" class="rounded-xl p-5 sm:p-6 mb-4" style="background:linear-gradient(180deg,#fff 0%, #fafbfb 100%); border:1.5px solid #182533;">
+                    <div class="flex items-center gap-2.5 mb-1">
+                        <span class="w-[22px] h-[22px] rounded-full text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0" style="background:#c62828;">3</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[#101820]"><span class="lang-content de lang-active">Technische Spezifikationen</span>
+<span class="lang-content en">Elevator Specifications</span>
+<span class="lang-content tr">Teknik Özellikler</span></h4>
+                    </div>
+                    <p class="text-[12px] text-[#63686d] mb-4 ml-[30px]"><span class="lang-content de lang-active">Die wichtigsten Angaben für Ihr Angebot</span>
+<span class="lang-content en">The key figures we need to prepare your quote</span>
+<span class="lang-content tr">Teklifiniz için gereken temel bilgiler</span></p>
+                    <div class="grid sm:grid-cols-3 gap-[14px]"><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Anzahl Aufzüge</span>
+<span class="lang-content en">No. of elevators</span>
+<span class="lang-content tr">Asansör Sayısı</span></span>
+                <div class="relative">
+                    <input type="number" name="elevator_qty" step="any" placeholder="1" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none"></span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Anzahl Haltestellen</span>
+<span class="lang-content en">No. of landings</span>
+<span class="lang-content tr">Durak Sayısı</span></span>
+                <div class="relative">
+                    <input type="number" name="landings" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none"></span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Geschwindigkeit</span>
+<span class="lang-content en">Speed</span>
+<span class="lang-content tr">Hız</span></span>
+                <div class="relative">
+                    <input type="number" name="speed" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none">m/s</span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]">Q &mdash; <span class="lang-content de lang-active">Tragfähigkeit</span>
+<span class="lang-content en">Capacity</span>
+<span class="lang-content tr">Kapasite</span></span>
+                <div class="relative">
+                    <input type="number" name="capacity_q" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none">kg</span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]">FH &mdash; <span class="lang-content de lang-active">Förderhöhe</span>
+<span class="lang-content en">Travel height</span>
+<span class="lang-content tr">Yükseklik</span></span>
+                <div class="relative">
+                    <input type="number" name="travel_height_fh" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none">mm</span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]">SG &mdash; <span class="lang-content de lang-active">Schachtgrube</span>
+<span class="lang-content en">Pit depth</span>
+<span class="lang-content tr">Kuyu Çukuru</span></span>
+                <div class="relative">
+                    <input type="number" name="pit_sg" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none">mm</span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]">SK &mdash; <span class="lang-content de lang-active">Schachtkopfhöhe</span>
+<span class="lang-content en">Headroom</span>
+<span class="lang-content tr">Üst Boşluk</span></span>
+                <div class="relative">
+                    <input type="number" name="headroom_sk" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none">mm</span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]">SB &mdash; <span class="lang-content de lang-active">Schachtbreite</span>
+<span class="lang-content en">Shaft width</span>
+<span class="lang-content tr">Kuyu Genişliği</span></span>
+                <div class="relative">
+                    <input type="number" name="width_sb" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none">mm</span>
+                </div>
+            </label><label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[#182533]">ST &mdash; <span class="lang-content de lang-active">Schachttiefe</span>
+<span class="lang-content en">Shaft depth</span>
+<span class="lang-content tr">Kuyu Derinliği</span></span>
+                <div class="relative">
+                    <input type="number" name="depth_st" step="any" placeholder="" class="w-full border border-[#e2e3e5] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[#182533]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[#999da2] pointer-events-none">mm</span>
+                </div>
+            </label>
+                    </div>
+                    <div class="flex gap-2.5 mt-4 rounded-lg p-3" style="background:#eef4f2; border:1px solid #cfe4dd;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2f5347" stroke-width="2" class="flex-shrink-0 mt-[1px]"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v.01M11 12h1v5h1"></path></svg>
+                        <p class="text-[12px] leading-relaxed" style="color:#2f5347;"><span class="lang-content de lang-active lang-block">Tipp: Bei Bestandsgebäuden Maße vor Ort durch einen Fachbetrieb aufnehmen lassen; bei Neubauten/Planung genügen die Rohbau- bzw. Planmaße.</span>
+<span class="lang-content en lang-block">Tip: For existing buildings, have a specialist measure on-site; for new builds or projects still in planning, shell/architectural drawing dimensions are sufficient.</span>
+<span class="lang-content tr lang-block">İpucu: Mevcut binalarda ölçümlerin yerinde bir uzman tarafından alınmasını sağlayın; yeni yapılarda/planlama aşamasında kaba inşaat veya proje ölçüleri yeterlidir.</span></p>
+                    </div>
+                </div>
+
+                <div id="q-s4" class="bg-white border border-[#e2e3e5] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[#101820] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">4</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[#101820]"><span class="lang-content de lang-active">Anmerkungen</span>
+<span class="lang-content en">Notes</span>
+<span class="lang-content tr">Notlar</span></h4>
+                    </div>
+                    <label class="flex flex-col gap-2">
+                        <span class="text-[13px] font-semibold text-[#182533]"><span class="lang-content de lang-active">Weitere Angaben zu Ihrem Projekt</span>
+<span class="lang-content en">Anything else we should know about your project</span>
+<span class="lang-content tr">Projeniz hakkında eklemek istediğiniz bilgiler</span> <span class="font-medium text-[#999da2]">(<span class="lang-content de lang-active">optional</span>
+<span class="lang-content en">optional</span>
+<span class="lang-content tr">opsiyonel</span>)</span></span>
+                        <textarea name="notes" rows="3" class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533]"></textarea>
+                    </label>
+                </div>
+
+                <div id="q-s5" class="bg-white border border-[#e2e3e5] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[#101820] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">5</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[#101820]"><span class="lang-content de lang-active">Wie haben Sie von uns erfahren?</span>
+<span class="lang-content en">How did you hear about us?</span>
+<span class="lang-content tr">Bizi nereden duydunuz?</span></h4>
+                    </div>
+                    <select name="source" class="border border-[#e2e3e5] rounded-md px-3.5 py-3 text-[14.5px] text-[#182533] bg-white w-full sm:w-auto"><option value="">Bitte wählen / Please select / Lütfen seçin</option><option value="Trade fair">Messe / Trade fair / Fuar</option><option value="Referral">Empfehlung / Referral / Tavsiye</option><option value="Website">Website / Web Sitesi</option><option value="LinkedIn">LinkedIn</option><option value="Other">Sonstiges / Other / Diğer</option>
+                    </select>
+                </div>
+
+                <p class="submit-note-ok text-[13px] text-[#63686d] leading-relaxed mb-3" hidden><span class="lang-content de lang-active lang-block">Danke — Ihre Anfrage ist bei uns eingegangen. Wir melden uns so schnell wie möglich bei Ihnen.</span>
+<span class="lang-content en lang-block">Thank you — your inquiry has been received. We'll get back to you as soon as possible.</span>
+<span class="lang-content tr lang-block">Teşekkürler — talebiniz bize ulaştı. En kısa sürede size geri döneceğiz.</span></p>
+                <p class="submit-note-error text-[13px] leading-relaxed mb-3" style="color:#b3261e;" hidden><span class="lang-content de lang-active lang-block">Da ist leider etwas schiefgelaufen. Bitte schreiben Sie uns direkt an info@chela-industrial.de.</span>
+<span class="lang-content en lang-block">Something went wrong on our end. Please email us directly at info@chela-industrial.de.</span>
+<span class="lang-content tr lang-block">Maalesef bir sorun oluştu. Lütfen doğrudan info@chela-industrial.de adresine yazın.</span></p>
+            </form>
+
+            <div class="flex items-center justify-between gap-3 px-5 sm:px-6 py-3.5 border-t flex-shrink-0 flex-wrap" style="border-color:#e2e3e5; background:#f5f5f6;">
+                <p class="text-[11px] text-[#999da2] leading-relaxed max-w-[260px]"><span class="lang-content de lang-active lang-block">Mit dem Absenden stimmen Sie zu, dass wir Sie zu Ihrer Anfrage kontaktieren.</span>
+<span class="lang-content en lang-block">By submitting, you agree that we may contact you regarding your inquiry.</span>
+<span class="lang-content tr lang-block">Gönder'e tıklayarak, talebinizle ilgili sizinle iletişime geçmemizi kabul edersiniz.</span></p>
+                <button type="submit" form="quote-form" class="px-7 py-3 rounded-md text-white font-bold text-[13.5px] whitespace-nowrap" style="background:#182533;"><span class="lang-content de lang-active">Anfrage senden</span>
+<span class="lang-content en">Send inquiry</span>
+<span class="lang-content tr">Talebi gönder</span></button>
+            </div>
+        </div>
+    </div>
+
     <script>
         var catalogState = { pdfDoc: null, pageNum: 1, numPages: 36, scale: 1.0, rendering: false, pending: null, loading: false };
         var CATALOG_URL = '/assets/pera-catalog.pdf';
@@ -408,6 +756,24 @@
             if (e.key === 'Escape') closeCatalog();
             else if (e.key === 'ArrowLeft') catalogPrevPage();
             else if (e.key === 'ArrowRight') catalogNextPage();
+        }
+
+        function openQuoteForm() {
+            var modal = document.getElementById('quote-modal');
+            modal.style.display = 'flex';
+            document.body.classList.add('overflow-hidden');
+            document.addEventListener('keydown', quoteKeyHandler);
+        }
+
+        function closeQuoteForm() {
+            var modal = document.getElementById('quote-modal');
+            modal.style.display = 'none';
+            document.body.classList.remove('overflow-hidden');
+            document.removeEventListener('keydown', quoteKeyHandler);
+        }
+
+        function quoteKeyHandler(e) {
+            if (e.key === 'Escape') closeQuoteForm();
         }
 
         function loadCatalogPdfJs(cb) {

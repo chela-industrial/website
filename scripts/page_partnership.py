@@ -166,7 +166,7 @@ PERA_BODY_P = L(
 ABOUT_PERA_EYEBROW = L('Der Partner', 'The partner', 'Ortak')
 ABOUT_PERA_H2 = L('Über PERA Mühendislik', 'About PERA Mühendislik', 'PERA Mühendislik Hakkında')
 PERA_TAGLINE1 = L('Aufzugslösungen nach Maß', 'Custom-Design Elevator Solutions', 'Özel Tasarım Asansör Çözümleri')
-PERA_TAGLINE2 = L('Individuelle Aufzugslösungen — seit 1992', 'Custom elevator solutions — since 1992', 'Özel asansör çözümleri — 1992\'den beri')
+PERA_TAGLINE2 = L('Türkisches Ingenieurunternehmen für Aufzugstechnik — seit 1992', 'Turkish elevator engineering company — since 1992', 'Türk asansör mühendislik şirketi — 1992\'den beri')
 PERA_TAGS = L(
     ['Hubschrauberlandeplatz-Aufzüge', 'Fahrzeugaufzüge', 'Monşarj-Systeme', 'Panoramaaufzüge', 'Personenaufzüge', 'Lastenaufzüge &amp; Plattformen', 'Hydraulikaufzüge', 'Modernisierung'],
     ['Helicopter landing pad elevators', 'Vehicle elevators', 'Moncharge systems', 'Panoramic elevators', 'Passenger elevators', 'Freight elevators &amp; platforms', 'Hydraulic elevators', 'Modernization'],
@@ -197,6 +197,126 @@ CATALOG_LOADING = L('Katalog wird geladen …', 'Loading catalog …', 'Katalog 
 CATALOG_PREV_ARIA = L('Vorherige Seite', 'Previous page', 'Önceki sayfa')
 CATALOG_NEXT_ARIA = L('Nächste Seite', 'Next page', 'Sonraki sayfa')
 CATALOG_CLOSE_ARIA = L('Schließen', 'Close', 'Kapat')
+
+# ---- Aufzugs-Anfrage: technical elevator price-request form, adapted from
+# the PDF intake form (FS.01.01.A) used by PERA/CHELA today. Rearranged for
+# the web (own pop-up, own CTA card next to the catalog) — kept close to the
+# PDF's actual fields, especially the Section 3 technical specs, but dropped
+# the print-only fields (Datum, Fax) and the shaft-section diagram, which a
+# tip note replaces. Submits through the same Formspree inbox as the other
+# site forms (see FORMSPREE_ENDPOINT / submitForm() in common.py). ----
+QUOTE_LABEL = L('Technische Anfrage', 'Technical Inquiry', 'Teknik Talep')
+QUOTE_TITLE = L('Aufzugs-Anfrage stellen', 'Request an Elevator Quote', 'Asansör Teklifi İsteyin')
+QUOTE_DESC = L(
+    'Geben Sie Ihre Eckdaten ein — wir erstellen Ihnen ein unverbindliches Angebot.',
+    'Enter your key details — we\'ll prepare a non-binding quote for you.',
+    'Temel bilgilerinizi girin — size bağlayıcı olmayan bir teklif hazırlayalım.',
+)
+QUOTE_BTN = L('Anfrage stellen', 'Request a quote', 'Teklif isteyin')
+
+QUOTE_MODAL_TITLE = L('Aufzugs-Anfrage', 'Elevator Inquiry', 'Asansör Talebi')
+QUOTE_MODAL_SUB = L(
+    'Technisches Anfrageformular für PERA-Hydraulikaufzüge',
+    'Technical inquiry form for PERA hydraulic elevators',
+    'PERA hidrolik asansörleri için teknik talep formu',
+)
+QUOTE_CLOSE_ARIA = CATALOG_CLOSE_ARIA
+
+QUOTE_NAV = [
+    L('Kontakt', 'Contact', 'İletişim'),
+    L('Gebäude', 'Building', 'Bina'),
+    L('Technik', 'Specifications', 'Teknik'),
+    L('Notizen', 'Notes', 'Notlar'),
+    L('Quelle', 'Source', 'Kaynak'),
+]
+
+Q_OPTIONAL = L('optional', 'optional', 'opsiyonel')
+
+Q_S1_H = L('Kontakt &amp; Anfrage', 'Contact &amp; Inquiry', 'İletişim ve Talep')
+Q_F_COMPANY = L('Firma', 'Company', 'Firma')
+Q_F_COMPANY_PH = L('Musterfirma GmbH', 'Musterfirma GmbH', 'Musterfirma GmbH')
+Q_F_CONTACT = L('Ansprechpartner', 'Contact person', 'Yetkili Kişi')
+Q_F_EMAIL = L('E-Mail', 'Email', 'E-posta')
+Q_F_PHONE = L('Telefon', 'Phone', 'Telefon')
+Q_F_REF = L('Referenz', 'Reference', 'Referans')
+
+Q_S2_H = L('Gebäude &amp; Verwendungszweck', 'Building &amp; Intended Use', 'Bina ve Kullanım Amacı')
+Q_F_BTYPE = L('Gebäudetyp', 'Type of building', 'Bina Tipi')
+Q_F_BCOND = L('Gebäudezustand', 'Condition of building', 'Bina Durumu')
+Q_F_USE = L('Verwendungszweck', 'Intended use', 'Kullanım Amacı')
+Q_MULTI = L('Mehrfachauswahl', 'select all that apply', 'birden fazla seçilebilir')
+Q_F_LOCATION = L('Einbauort', 'Place of installation', 'Kurulum Yeri')
+Q_F_LOCATION_PH = L('Stadt, Land', 'City, country', 'Şehir, ülke')
+Q_F_DEADLINE = L('Gewünschter Termin', 'Required deadline', 'İstenen Teslim Tarihi')
+Q_F_DEADLINE_PH = L('z. B. Q1 2027', 'e.g. Q1 2027', 'örn. 2027 1. Çeyrek')
+
+BUILDING_TYPE_OPTS = [
+    ('Business', L('Gewerbe', 'Business', 'Ticari')),
+    ('Factory', L('Fabrik', 'Factory', 'Fabrika')),
+    ('Residence', L('Wohngebäude', 'Residence', 'Konut')),
+    ('School', L('Schule', 'School', 'Okul')),
+    ('Hospital', L('Krankenhaus', 'Hospital', 'Hastane')),
+    ('Other', L('Sonstiges', 'Other', 'Diğer')),
+]
+BUILDING_COND_OPTS = [
+    ('Existing', L('Bestehend', 'Existing', 'Mevcut')),
+    ('Under construction', L('Im Bau', 'Under construction', 'İnşaat Halinde')),
+    ('Design stage', L('In Planung', 'Design stage', 'Planlama Aşamasında')),
+]
+INTENDED_USE_OPTS = [
+    ('Passenger', L('Personenaufzug', 'Passenger', 'Yolcu')),
+    ('Load', L('Lastenaufzug', 'Load', 'Yük')),
+    ('Load cabin', L('Lastenkabine', 'Load cabin', 'Yük Kabini')),
+    ('Vehicle platform', L('Fahrzeugplattform', 'Vehicle platform', 'Araç Platformu')),
+    ('Fire elevator', L('Feuerwehraufzug', 'Fire elevator', 'İtfaiye Asansörü')),
+    ('Disabled access', L('Barrierefrei', 'Disabled access', 'Engelli Erişimi')),
+    ('Other', L('Sonstiges', 'Other', 'Diğer')),
+]
+SOURCE_OPTS = [
+    ('Trade fair', L('Messe', 'Trade fair', 'Fuar')),
+    ('Referral', L('Empfehlung', 'Referral', 'Tavsiye')),
+    ('Website', L('Website', 'Website', 'Web Sitesi')),
+    ('LinkedIn', L('LinkedIn', 'LinkedIn', 'LinkedIn')),
+    ('Other', L('Sonstiges', 'Other', 'Diğer')),
+]
+
+Q_S3_H = L('Technische Spezifikationen', 'Elevator Specifications', 'Teknik Özellikler')
+Q_S3_SUB = L(
+    'Die wichtigsten Angaben für Ihr Angebot',
+    'The key figures we need to prepare your quote',
+    'Teklifiniz için gereken temel bilgiler',
+)
+Q_F_QTY = L('Anzahl Aufzüge', 'No. of elevators', 'Asansör Sayısı')
+Q_F_LANDINGS = L('Anzahl Haltestellen', 'No. of landings', 'Durak Sayısı')
+Q_F_SPEED = L('Geschwindigkeit', 'Speed', 'Hız')
+Q_F_CAPACITY = L('Tragfähigkeit', 'Capacity', 'Kapasite')
+Q_F_TRAVEL = L('Förderhöhe', 'Travel height', 'Yükseklik')
+Q_F_PIT = L('Schachtgrube', 'Pit depth', 'Kuyu Çukuru')
+Q_F_HEADROOM = L('Schachtkopfhöhe', 'Headroom', 'Üst Boşluk')
+Q_F_WIDTH = L('Schachtbreite', 'Shaft width', 'Kuyu Genişliği')
+Q_F_DEPTH = L('Schachttiefe', 'Shaft depth', 'Kuyu Derinliği')
+Q_TIP = L(
+    'Tipp: Bei Bestandsgebäuden Maße vor Ort durch einen Fachbetrieb aufnehmen lassen; bei Neubauten/Planung genügen die Rohbau- bzw. Planmaße.',
+    'Tip: For existing buildings, have a specialist measure on-site; for new builds or projects still in planning, shell/architectural drawing dimensions are sufficient.',
+    'İpucu: Mevcut binalarda ölçümlerin yerinde bir uzman tarafından alınmasını sağlayın; yeni yapılarda/planlama aşamasında kaba inşaat veya proje ölçüleri yeterlidir.',
+)
+
+Q_S4_H = L('Anmerkungen', 'Notes', 'Notlar')
+Q_F_NOTES = L(
+    'Weitere Angaben zu Ihrem Projekt',
+    'Anything else we should know about your project',
+    'Projeniz hakkında eklemek istediğiniz bilgiler',
+)
+
+Q_S5_H = L('Wie haben Sie von uns erfahren?', 'How did you hear about us?', 'Bizi nereden duydunuz?')
+Q_SOURCE_PLACEHOLDER = L('Bitte wählen', 'Please select', 'Lütfen seçin')
+
+Q_PRIVACY = L(
+    'Mit dem Absenden stimmen Sie zu, dass wir Sie zu Ihrer Anfrage kontaktieren.',
+    'By submitting, you agree that we may contact you regarding your inquiry.',
+    'Gönder\'e tıklayarak, talebinizle ilgili sizinle iletişime geçmemizi kabul edersiniz.',
+)
+Q_SUBMIT = L('Anfrage senden', 'Send inquiry', 'Talebi gönder')
 
 WHAT_IT_MEANS_H2 = L('Was das für Sie bedeutet', 'What this means for you', 'Bunun sizin için anlamı')
 WHAT_IT_MEANS_CARDS = [
@@ -232,6 +352,55 @@ def render_pera():
             <h3 class="text-[15.5px] font-semibold text-[{INK_950}]">{lang_nodes(title)}</h3>
             <p class="text-[13.5px] leading-relaxed text-[{SLATE_600}]">{lang_nodes(desc, tag="span", display="block")}</p>
         </div>'''
+
+    # ---- Aufzugs-Anfrage form pieces ----
+    def pill_group(name, opts, input_type='radio'):
+        html = ''
+        for val, label in opts:
+            html += f'''<label class="inline-flex items-center px-3.5 py-1.5 border border-[{LINE}] rounded-full text-[12.5px] font-medium text-[{SLATE_700}] bg-white cursor-pointer select-none has-[:checked]:bg-[{INK_950}] has-[:checked]:text-white has-[:checked]:border-[{INK_950}] transition-colors">
+                <input type="{input_type}" name="{name}" value="{val}" class="sr-only">{lang_nodes(label)}
+            </label>'''
+        return html
+
+    def spec_field(name, label_html, unit, placeholder=''):
+        return f'''<label class="flex flex-col gap-2">
+                <span class="text-[13px] font-semibold text-[{INK_900}]">{label_html}</span>
+                <div class="relative">
+                    <input type="number" name="{name}" step="any" placeholder="{placeholder}" class="w-full border border-[{LINE}] rounded-md pl-3.5 pr-12 py-3 text-[14.5px] text-[{INK_900}]">
+                    <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11.5px] font-bold text-[{SLATE_400}] pointer-events-none">{unit}</span>
+                </div>
+            </label>'''
+
+    quote_nav_html = ''.join(
+        f'<a href="#q-s{i+1}" class="flex-shrink-0 text-[11.5px] font-semibold text-[{SLATE_700}] bg-white border border-[{LINE}] px-2.5 py-1.5 rounded-full whitespace-nowrap"><b class="text-[{INK_900}] mr-1">{i+1}</b>{lang_nodes(label)}</a>'
+        for i, label in enumerate(QUOTE_NAV)
+    )
+
+    btype_html = pill_group('building_type', BUILDING_TYPE_OPTS)
+    bcond_html = pill_group('building_condition', BUILDING_COND_OPTS)
+    use_html = pill_group('intended_use', INTENDED_USE_OPTS, input_type='checkbox')
+    # A native <select>'s options can't use the lang_nodes() show/hide
+    # technique, so each option shows all three languages at once (this
+    # field is the lowest-priority one on the form — "how did you hear
+    # about us", optional).
+    def tri(label_dict):
+        return ' / '.join(dict.fromkeys([label_dict['de'], label_dict['en'], label_dict['tr']]))
+
+    source_opts_html = f'<option value="">{tri(Q_SOURCE_PLACEHOLDER)}</option>' + ''.join(
+        f'<option value="{val}">{tri(label)}</option>' for val, label in SOURCE_OPTS
+    )
+
+    spec_fields_html = ''.join([
+        spec_field('elevator_qty', lang_nodes(Q_F_QTY), '', placeholder='1'),
+        spec_field('landings', lang_nodes(Q_F_LANDINGS), ''),
+        spec_field('speed', lang_nodes(Q_F_SPEED), 'm/s'),
+        spec_field('capacity_q', f'Q &mdash; {lang_nodes(Q_F_CAPACITY)}', 'kg'),
+        spec_field('travel_height_fh', f'FH &mdash; {lang_nodes(Q_F_TRAVEL)}', 'mm'),
+        spec_field('pit_sg', f'SG &mdash; {lang_nodes(Q_F_PIT)}', 'mm'),
+        spec_field('headroom_sk', f'SK &mdash; {lang_nodes(Q_F_HEADROOM)}', 'mm'),
+        spec_field('width_sb', f'SB &mdash; {lang_nodes(Q_F_WIDTH)}', 'mm'),
+        spec_field('depth_st', f'ST &mdash; {lang_nodes(Q_F_DEPTH)}', 'mm'),
+    ])
 
     body = f'''
     <header class="bg-[{INK_950}] text-white py-20 px-6"
@@ -316,6 +485,24 @@ def render_pera():
                     </a>
                 </div>
             </div>
+
+            <div class="mt-4 relative overflow-hidden rounded-xl flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 p-6 sm:p-7"
+                 style="background:linear-gradient(100deg, #0d1922 0%, {INK_900} 55%, #223247 100%); border:1px dashed rgba(255,255,255,.28);">
+                <div class="flex-shrink-0 relative z-10 w-[54px] h-[54px] rounded-lg flex items-center justify-center" style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"></rect><path d="M8 8h8M8 12h8M8 16h4"></path></svg>
+                </div>
+                <div class="flex-1 relative z-10 text-white min-w-0">
+                    <span class="block text-[10.5px] font-bold tracking-widest uppercase" style="color:#9ad0c2;">{lang_nodes(QUOTE_LABEL)}</span>
+                    <h3 class="font-display text-[16.5px] font-semibold mt-1">{lang_nodes(QUOTE_TITLE)}</h3>
+                    <p class="text-[12.5px] leading-relaxed mt-1" style="color:#c7cdd3;">{lang_nodes(QUOTE_DESC, tag="span", display="block")}</p>
+                </div>
+                <div class="relative z-10 flex-shrink-0">
+                    <button type="button" onclick="openQuoteForm()" class="px-5 py-3 rounded-md bg-white text-[{INK_950}] font-bold text-[13px] inline-flex items-center gap-2 whitespace-nowrap">
+                        {lang_nodes(QUOTE_BTN)}
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -378,6 +565,128 @@ def render_pera():
         </div>
     </div>
 
+    <div id="quote-modal" class="fixed inset-0 z-[100] items-center justify-center p-4" style="display:none; background:rgba(16,24,32,0.75);" onclick="if(event.target===this) closeQuoteForm();">
+        <div class="w-full rounded-xl overflow-hidden shadow-2xl flex flex-col" style="max-width:720px; max-height:90vh; background:{PAPER_50};">
+            <div class="flex items-center justify-between gap-3 px-4 py-3 text-white flex-shrink-0" style="background:{INK_950};">
+                <div class="min-w-0">
+                    <div class="text-[13.5px] font-bold truncate">{lang_nodes(QUOTE_MODAL_TITLE)}</div>
+                    <div class="text-[10.5px] truncate" style="color:{SLATE_300};">{lang_nodes(QUOTE_MODAL_SUB)}</div>
+                </div>
+                <button type="button" onclick="closeQuoteForm()" aria-label="{QUOTE_CLOSE_ARIA['de']}" class="w-8 h-8 rounded-md flex items-center justify-center text-white flex-shrink-0" style="background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.18);">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-1.5 px-4 py-2.5" style="background:#eceeef; border-bottom:1px solid {LINE}; overflow-x:auto;">{quote_nav_html}
+            </div>
+
+            <form id="quote-form" onsubmit="return submitForm(event, '{FORMSPREE_ENDPOINT}')" class="flex-1 overflow-y-auto px-5 sm:px-6 pt-5 pb-2">
+
+                <div id="q-s1" class="bg-white border border-[{LINE}] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[{INK_950}] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">1</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[{INK_950}]">{lang_nodes(Q_S1_H)}</h4>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-[14px] mb-[14px]">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_COMPANY)} <span style="color:#c62828;">*</span></span>
+                            <input type="text" name="company" required placeholder="{Q_F_COMPANY_PH['de']}" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                        </label>
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_CONTACT)} <span style="color:#c62828;">*</span></span>
+                            <input type="text" name="contact_person" required class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                        </label>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-[14px] mb-[14px]">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_EMAIL)} <span style="color:#c62828;">*</span></span>
+                            <input type="email" name="email" required class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                        </label>
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_PHONE)}</span>
+                            <input type="tel" name="phone" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                        </label>
+                    </div>
+                    <label class="flex flex-col gap-2">
+                        <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_REF)} <span class="font-medium text-[{SLATE_400}]">({lang_nodes(Q_OPTIONAL)})</span></span>
+                        <input type="text" name="reference" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                    </label>
+                </div>
+
+                <div id="q-s2" class="bg-white border border-[{LINE}] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[{INK_950}] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">2</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[{INK_950}]">{lang_nodes(Q_S2_H)}</h4>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-[14px]">
+                        <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_BTYPE)}</span>
+                        <div class="flex flex-wrap gap-2">{btype_html}</div>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-[14px]">
+                        <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_BCOND)}</span>
+                        <div class="flex flex-wrap gap-2">{bcond_html}</div>
+                    </div>
+                    <div class="flex flex-col gap-2 mb-[14px]">
+                        <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_USE)} <span class="font-medium text-[{SLATE_400}]">({lang_nodes(Q_MULTI)})</span></span>
+                        <div class="flex flex-wrap gap-2">{use_html}</div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-[14px]">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_LOCATION)}</span>
+                            <input type="text" name="location" placeholder="{Q_F_LOCATION_PH['de']}" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                        </label>
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_DEADLINE)}</span>
+                            <input type="text" name="deadline" placeholder="{Q_F_DEADLINE_PH['de']}" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                        </label>
+                    </div>
+                </div>
+
+                <div id="q-s3" class="rounded-xl p-5 sm:p-6 mb-4" style="background:linear-gradient(180deg,#fff 0%, #fafbfb 100%); border:1.5px solid {INK_900};">
+                    <div class="flex items-center gap-2.5 mb-1">
+                        <span class="w-[22px] h-[22px] rounded-full text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0" style="background:#c62828;">3</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[{INK_950}]">{lang_nodes(Q_S3_H)}</h4>
+                    </div>
+                    <p class="text-[12px] text-[{SLATE_600}] mb-4 ml-[30px]">{lang_nodes(Q_S3_SUB)}</p>
+                    <div class="grid sm:grid-cols-3 gap-[14px]">{spec_fields_html}
+                    </div>
+                    <div class="flex gap-2.5 mt-4 rounded-lg p-3" style="background:#eef4f2; border:1px solid #cfe4dd;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2f5347" stroke-width="2" class="flex-shrink-0 mt-[1px]"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v.01M11 12h1v5h1"></path></svg>
+                        <p class="text-[12px] leading-relaxed" style="color:#2f5347;">{lang_nodes(Q_TIP, tag="span", display="block")}</p>
+                    </div>
+                </div>
+
+                <div id="q-s4" class="bg-white border border-[{LINE}] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[{INK_950}] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">4</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[{INK_950}]">{lang_nodes(Q_S4_H)}</h4>
+                    </div>
+                    <label class="flex flex-col gap-2">
+                        <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_NOTES)} <span class="font-medium text-[{SLATE_400}]">({lang_nodes(Q_OPTIONAL)})</span></span>
+                        <textarea name="notes" rows="3" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]"></textarea>
+                    </label>
+                </div>
+
+                <div id="q-s5" class="bg-white border border-[{LINE}] rounded-xl p-5 sm:p-6 mb-4">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <span class="w-[22px] h-[22px] rounded-full bg-[{INK_950}] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">5</span>
+                        <h4 class="font-display text-[15px] font-semibold text-[{INK_950}]">{lang_nodes(Q_S5_H)}</h4>
+                    </div>
+                    <select name="source" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}] bg-white w-full sm:w-auto">{source_opts_html}
+                    </select>
+                </div>
+
+                <p class="submit-note-ok text-[13px] text-[{SLATE_600}] leading-relaxed mb-3" hidden>{lang_nodes(SUBMIT_NOTE_OK, tag="span", display="block")}</p>
+                <p class="submit-note-error text-[13px] leading-relaxed mb-3" style="color:#b3261e;" hidden>{lang_nodes(SUBMIT_NOTE_ERROR, tag="span", display="block")}</p>
+            </form>
+
+            <div class="flex items-center justify-between gap-3 px-5 sm:px-6 py-3.5 border-t flex-shrink-0 flex-wrap" style="border-color:{LINE}; background:{PAPER_50};">
+                <p class="text-[11px] text-[{SLATE_400}] leading-relaxed max-w-[260px]">{lang_nodes(Q_PRIVACY, tag="span", display="block")}</p>
+                <button type="submit" form="quote-form" class="px-7 py-3 rounded-md text-white font-bold text-[13.5px] whitespace-nowrap" style="background:{INK_900};">{lang_nodes(Q_SUBMIT)}</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         var catalogState = {{ pdfDoc: null, pageNum: 1, numPages: {CATALOG_PAGES}, scale: 1.0, rendering: false, pending: null, loading: false }};
         var CATALOG_URL = '{CATALOG_URL}';
@@ -416,6 +725,24 @@ def render_pera():
             if (e.key === 'Escape') closeCatalog();
             else if (e.key === 'ArrowLeft') catalogPrevPage();
             else if (e.key === 'ArrowRight') catalogNextPage();
+        }}
+
+        function openQuoteForm() {{
+            var modal = document.getElementById('quote-modal');
+            modal.style.display = 'flex';
+            document.body.classList.add('overflow-hidden');
+            document.addEventListener('keydown', quoteKeyHandler);
+        }}
+
+        function closeQuoteForm() {{
+            var modal = document.getElementById('quote-modal');
+            modal.style.display = 'none';
+            document.body.classList.remove('overflow-hidden');
+            document.removeEventListener('keydown', quoteKeyHandler);
+        }}
+
+        function quoteKeyHandler(e) {{
+            if (e.key === 'Escape') closeQuoteForm();
         }}
 
         function loadCatalogPdfJs(cb) {{
