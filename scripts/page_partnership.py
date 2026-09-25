@@ -117,34 +117,44 @@ def render_landing():
 
 
 # -------------------------------------------------------------- PERA PAGE ---
+# Title/description updated 2026-09-25 to add the KfW-159 retrofit-financing
+# keyword cluster (brief: "CHELA Website — KfW-159 / PERAGREEN Content & SEO
+# Brief for Dev") — only the 'de' copy actually renders in <title>/<meta
+# description> (see page_html(): search engines see the German version as
+# canonical for this single-URL trilingual page), so that's the version that
+# matters for ranking; en/tr kept in sync for hygiene.
 PERA_TITLE = L(
-    'Partnerschaft — PERA Mühendislik | CHELA Industrial',
-    'Partnership — PERA Mühendislik | CHELA Industrial',
-    'Ortaklık — PERA Mühendislik | CHELA Industrial',
+    'PERA Aufzugstechnik &amp; KfW-159-Förderung | CHELA Industrial',
+    'PERA Elevator Technology &amp; KfW-159 Funding | CHELA Industrial',
+    'PERA Asansör Teknolojisi &amp; KfW-159 Finansmanı | CHELA Industrial',
 )
 PERA_DESC = L(
-    'CHELA Industrial ist der einzige offizielle EU-Partner von PERA Mühendislik für Aufzugstechnik, unter einer unterzeichneten Kooperationsvereinbarung.',
-    'CHELA Industrial is the only official EU partner of PERA Mühendislik for elevator technology, under a signed cooperation agreement.',
-    'CHELA Industrial, asansör teknolojisi için PERA Mühendislik\'in imzalı bir iş birliği anlaşması kapsamındaki tek resmi AB ortağıdır.',
+    'CHELA Industrial: exklusiver EU-Partner von PERA Mühendislik für Aufzugstechnik — inkl. Aufzug-Nachrüstung im Bestandsgebäude mit KfW-159-Förderung.',
+    'CHELA Industrial is the exclusive EU partner of PERA Mühendislik for elevator technology — including KfW-159-funded elevator retrofits for existing buildings.',
+    'CHELA Industrial, asansör teknolojisi için PERA Mühendislik\'in tek resmi AB ortağıdır — mevcut binalarda KfW-159 destekli asansör sonradan montajı dahil.',
 )
 # Full DE/EN/TR elevator-vocabulary coverage, matching PERA Mühendislik's own
 # product range (https://peramuhendislik.com/) — passenger, freight, panoramic,
 # hydraulic, vehicle and helicopter-landing-pad elevators, plus modernization
 # and maintenance — so this page surfaces for the same searches PERA does,
-# in all three languages.
+# in all three languages. DE/EN block also carries the KfW-159 retrofit-
+# financing target keywords from the 2026-09-25 SEO brief.
 PERA_KEYWORDS = L(
     'PERA Mühendislik Deutschland, Personenaufzüge, Lastenaufzüge, Panoramaaufzüge, Hydraulikaufzüge, '
     'Fahrzeugaufzüge, Hubschrauberlandeplatz-Aufzüge, Monşarj-Systeme, Aufzugsmodernisierung, Aufzugswartung, '
     'Aufzugsplanung und -konstruktion, Aufzugsherstellung und -montage, Aufzugslösungen nach Maß, '
-    'europäischer Vertreter PERA, seit 1992',
+    'europäischer Vertreter PERA, seit 1992, Aufzug Nachrüstung Mehrfamilienhaus, KfW 159 Aufzug, '
+    'Aufzug altes Gebäude nachrüsten, Aufzug nachträglich einbauen, KfW Förderung Aufzug, '
+    'Barrierefreier Umbau Aufzug Bestandsgebäude',
     'PERA Mühendislik Europe, passenger elevators, freight elevators, load elevators, panoramic elevators, '
     'hydraulic elevators, vehicle elevators, helicopter landing pad elevators, moncharge systems, '
     'elevator modernization, elevator maintenance, elevator design and engineering, elevator manufacturing '
-    'and installation, custom-design elevator solutions, PERA European representative, since 1992',
+    'and installation, custom-design elevator solutions, PERA European representative, since 1992, '
+    'elevator retrofit existing building, KfW 159 elevator funding, barrier-free elevator conversion',
     'PERA Mühendislik Avrupa temsilcisi, yolcu asansörleri, yük asansörleri, panoramik asansörler, '
     'hidrolik asansörler, araç asansörleri, helikopter pist asansörleri, monşarj sistemleri, asansör modernizasyonu, '
     'asansör bakımı, asansör tasarım ve mühendislik, asansör üretim ve montaj, özel tasarım asansör çözümleri, '
-    '1992\'den beri asansör',
+    '1992\'den beri asansör, KfW 159 asansör finansmanı, mevcut binaya asansör montajı',
 )
 PERA_EYEBROW = L('Partnerschaft — PERA Mühendislik', 'Partnership — PERA Mühendislik', 'Ortaklık — PERA Mühendislik')
 PERA_H1 = L('Europäische Vertretung für PERA Mühendislik', 'European representation for PERA Mühendislik', 'PERA Mühendislik için Avrupa temsilciliği')
@@ -179,6 +189,71 @@ PERA_QUOTE = L(
 )
 PERA_QUOTE_SRC = L('Unternehmensphilosophie, PERA Mühendislik', 'Company philosophy, PERA Mühendislik', 'Şirket felsefesi, PERA Mühendislik')
 
+# ---- KfW-159 retrofit-financing section (added 2026-09-25 per "CHELA
+# Website — KfW-159 / PERAGREEN Content & SEO Brief for Dev"). Sits right
+# after "Über PERA Mühendislik" and before the catalog/quote-request cards —
+# read the partnership pitch, get the financing angle, then act via the
+# existing Aufzugs-Anfrage form immediately below. Deliberately no PERAGREEN
+# space-saving figures yet (v1 decision, 2026-09-25) — those go in only once
+# Durukan supplies the confirmed real numbers; do not invent/approximate them
+# (see business plan Section 1 note on UWG "green"-claim rules tightening
+# 27.09.2026). Anchor id lets this be deep-linked from elsewhere (emails,
+# other pages, ads) as /partnership/pera#kfw-159.
+KFW_ANCHOR_ID = 'kfw-159'
+KFW_EYEBROW = L('Förderung', 'Funding', 'Finansman')
+KFW_BADGE = L(
+    'Fördermöglichkeit für Bestandsgebäude',
+    'Funding for existing buildings',
+    'Mevcut binalar için finansman imkanı',
+)
+KFW_H2 = L(
+    'Aufzug-Nachrüstung mit KfW-159-Förderung',
+    'Elevator Retrofit with KfW-159 Funding',
+    'KfW-159 Finansman Desteğiyle Asansör Sonradan Montajı',
+)
+KFW_LEAD = L(
+    'PERA entwickelt individuelle Aufzugslösungen für Bestandsgebäude, die Standardanbieter ablehnen — '
+    'nicht-normgerechte Schächte, Altbaustrukturen, ungünstige Grundrisse. CHELA übernimmt parallel die '
+    'KfW-159-Antragsunterlagen, damit die Förderung nicht auf der Strecke bleibt.',
+    'PERA designs custom elevator solutions for existing buildings that standard providers won\'t take on — '
+    'non-standard shafts, older building structures, awkward floor plans. CHELA handles the KfW-159 '
+    'financing paperwork alongside the sale, so it doesn\'t fall through the cracks.',
+    'PERA, standart sağlayıcıların üstlenmediği mevcut binalar için özel asansör çözümleri geliştirir — '
+    'standart dışı asansör boşlukları, eski bina yapıları, elverişsiz kat planları. CHELA, satışla birlikte '
+    'KfW-159 finansman başvuru evraklarını da üstlenir, böylece destek imkanı gözden kaçmaz.',
+)
+KFW_STEPS_H3 = L('So funktioniert die Förderung', 'How the funding process works', 'Finansman süreci nasıl işliyor')
+KFW_STEPS = [
+    (L('Förderfähigkeit prüfen', 'Check eligibility', 'Uygunluk kontrolü'),
+     L('Bestehendes Wohngebäude, bis zu 50.000 &euro; Darlehen je Wohneinheit.',
+       'Existing residential building, up to &euro;50,000 loan per residential unit.',
+       'Mevcut konut binası, bağımsız bölüm başına 50.000 &euro;\'ya kadar kredi.')),
+    (L('Technisches Konzept &amp; Kostenvoranschlag', 'Technical concept &amp; cost estimate', 'Teknik konsept ve maliyet teklifi'),
+     L('PERA plant die Aufzugslösung passend zu Ihrem Gebäude.',
+       'PERA designs the elevator solution to fit your building.',
+       'PERA, binanıza uygun asansör çözümünü tasarlar.')),
+    (L('Antragsunterlagen &amp; Hausbank', 'Application &amp; your bank', 'Başvuru evrakları ve banka'),
+     L('CHELA bereitet die Unterlagen vor — Sie reichen über Ihre eigene Hausbank ein.',
+       'CHELA prepares the documents — you submit through your own bank.',
+       'CHELA evrakları hazırlar — başvuruyu kendi bankanız üzerinden siz yaparsınız.')),
+]
+KFW_WHO_LABEL = L('Für wen:', 'Who this is for:', 'Kimler için:')
+KFW_WHO_TEXT = L(
+    'Eigentümer bestehender Gebäude — private Eigentümer, Vermieter und kleinere Hausverwaltungen. '
+    'Nicht für Neubauten, nicht für Eigentümergemeinschaften (WEG).',
+    'Owners of existing buildings — private homeowners, landlords, and small property management companies. '
+    'Not for new construction, not for multi-owner (WEG) buildings.',
+    'Mevcut bina sahipleri — özel mülk sahipleri, kiraya verenler ve küçük ölçekli yönetim şirketleri. '
+    'Yeni inşaatlar için değil, çok ortaklı mülkiyet birlikleri (WEG) için değil.',
+)
+# The KfW-159 section deliberately carries no CTA of its own (2026-09-26 dev
+# note) — it used to end in its own "Anfrage stellen" bar, which sat right on
+# top of the near-identical quote card two sections down and read as two
+# separate asks. There is now exactly one request CTA on the page (the quote
+# card below, whose copy — QUOTE_LABEL / QUOTE_TITLE / QUOTE_DESC — was
+# rewritten to cover both a plain elevator inquiry and a KfW-159 one) so a
+# reader who just finished the funding section flows straight into it.
+
 # ---- E-Katalog: in-page PDF.js viewer for PERA's product catalog (single
 # English-language PDF, shown identically across all three site languages
 # until PERA provides other language versions — see CATALOG_LANG_NOTE) ----
@@ -205,20 +280,24 @@ CATALOG_CLOSE_ARIA = L('Schließen', 'Close', 'Kapat')
 # the print-only fields (Datum, Fax) and the shaft-section diagram, which a
 # tip note replaces. Submits through the same Formspree inbox as the other
 # site forms (see FORMSPREE_ENDPOINT / submitForm() in common.py). ----
-QUOTE_LABEL = L('Technische Anfrage', 'Technical Inquiry', 'Teknik Talep')
-QUOTE_TITLE = L('Aufzugs-Anfrage stellen', 'Request an Elevator Quote', 'Asansör Teklifi İsteyin')
+QUOTE_LABEL = L('Unverbindlich &amp; kostenlos', 'No cost, no obligation', 'Ücretsiz ve taahhütsüz')
+QUOTE_TITLE = L(
+    'Aufzugsanfrage stellen — mit oder ohne KfW-159-Förderung',
+    'Request an elevator quote — with or without KfW-159 funding',
+    'Asansör teklifi isteyin — KfW-159 finansmanlı veya finansmansız',
+)
 QUOTE_DESC = L(
-    'Geben Sie Ihre Eckdaten ein — wir erstellen Ihnen ein unverbindliches Angebot.',
-    'Enter your key details — we\'ll prepare a non-binding quote for you.',
-    'Temel bilgilerinizi girin — size bağlayıcı olmayan bir teklif hazırlayalım.',
+    'Ein Formular für Ihre technische Anfrage und, falls gewünscht, die KfW-159-Fördermittel-Angaben.',
+    'One form for your technical inquiry and, if relevant, the KfW-159 funding details.',
+    'Teknik talebiniz ve isterseniz KfW-159 finansman bilgileriniz için tek bir form.',
 )
 QUOTE_BTN = L('Anfrage stellen', 'Request a quote', 'Teklif isteyin')
 
 QUOTE_MODAL_TITLE = L('Aufzugs-Anfrage', 'Elevator Inquiry', 'Asansör Talebi')
 QUOTE_MODAL_SUB = L(
-    'Technisches Anfrageformular für PERA-Hydraulikaufzüge',
-    'Technical inquiry form for PERA hydraulic elevators',
-    'PERA hidrolik asansörleri için teknik talep formu',
+    'Technisches Anfrageformular für PERA-Hydraulikaufzüge — auch für KfW-159-Förderanfragen',
+    'Technical inquiry form for PERA hydraulic elevators — also covers KfW-159 funding requests',
+    'PERA hidrolik asansörleri için teknik talep formu — KfW-159 finansman talepleri için de kullanılabilir',
 )
 QUOTE_CLOSE_ARIA = CATALOG_CLOSE_ARIA
 
@@ -249,6 +328,27 @@ Q_F_LOCATION = L('Einbauort', 'Place of installation', 'Kurulum Yeri')
 Q_F_LOCATION_PH = L('Stadt, Land', 'City, country', 'Şehir, ülke')
 Q_F_DEADLINE = L('Gewünschter Termin', 'Required deadline', 'İstenen Teslim Tarihi')
 Q_F_DEADLINE_PH = L('z. B. Q1 2027', 'e.g. Q1 2027', 'örn. 2027 1. Çeyrek')
+# Added 2026-09-25 alongside the KfW-159 section (SEO/content brief, point C:
+# "consider adding an optional field like building type or how many units so
+# an inbound KfW-159 inquiry arrives pre-qualified") — both optional, so the
+# form stays usable for every other inquiry too, not just KfW-159 leads.
+Q_F_UNITS = L('Anzahl Wohneinheiten', 'Number of residential units', 'Bağımsız Bölüm Sayısı')
+Q_F_KFW_INTEREST = L(
+    'Ich interessiere mich für eine KfW-159-Förderung',
+    'I\'m interested in KfW-159 funding',
+    'KfW-159 finansman desteğiyle ilgileniyorum',
+)
+# Small helper line under the toggle above, and the toggle's own onward-reveal
+# field — together these fold the KfW-159 funding request into this one form
+# (rather than a bolted-on checkbox) per the 2026-09-25 dev brief: checking it
+# reveals Q_F_UNITS inline (toggleKfwUnits() in the page script) and, when the
+# quote form is opened from the KfW-159 CTA, is pre-checked automatically
+# (openQuoteForm(true)).
+Q_F_KFW_HINT = L(
+    'Wir ergänzen Ihre Anfrage um die relevanten Förderangaben.',
+    'We\'ll add the relevant funding details to your inquiry.',
+    'Talebinize ilgili finansman bilgilerini ekleyeceğiz.',
+)
 
 BUILDING_TYPE_OPTS = [
     ('Business', L('Gewerbe', 'Business', 'Ticari')),
@@ -353,6 +453,14 @@ def render_pera():
             <p class="text-[13.5px] leading-relaxed text-[{SLATE_600}]">{lang_nodes(desc, tag="span", display="block")}</p>
         </div>'''
 
+    kfw_steps_html = ''
+    for i, (title, desc) in enumerate(KFW_STEPS, start=1):
+        kfw_steps_html += f'''
+                <div class="flex gap-3 items-start">
+                    <span class="w-[26px] h-[26px] rounded-full bg-[{INK_950}] text-white text-[12px] font-bold flex items-center justify-center flex-shrink-0">{i}</span>
+                    <span class="text-[13.5px] leading-relaxed text-[{SLATE_700}]"><strong class="text-[{INK_950}]">{lang_nodes(title)}.</strong> {lang_nodes(desc)}</span>
+                </div>'''
+
     # ---- Aufzugs-Anfrage form pieces ----
     def pill_group(name, opts, input_type='radio'):
         html = ''
@@ -416,26 +524,91 @@ def render_pera():
         </div>
     </header>
 
-    <section class="bg-white py-[76px] px-6">
+    <section class="bg-white py-[56px] px-6">
         <div class="max-w-5xl mx-auto grid md:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
             <p class="text-[16.5px] leading-relaxed text-[{SLATE_700}] max-w-xl">{lang_nodes(PERA_BODY_P, tag="span", display="block")}</p>
             <div class="flex justify-center">
-                <svg viewBox="0 0 260 180" width="240" height="166" fill="none" stroke="{INK_900}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="40" cy="90" r="9"></circle><circle cx="220" cy="90" r="9"></circle><circle cx="130" cy="40" r="9" fill="{INK_900}"></circle>
-                    <path d="M48 90 L212 90" stroke-dasharray="2 7"></path>
-                    <path d="M46 85 L126 44"></path>
-                    <path d="M214 85 L134 44"></path>
-                    <text x="24" y="118" fill="{INK_900}" stroke="none" font-family="IBM Plex Sans" font-size="12" font-weight="600">Europa</text>
-                    <text x="188" y="118" fill="{INK_900}" stroke="none" font-family="IBM Plex Sans" font-size="12" font-weight="600">Türkei</text>
-                    <text x="130" y="24" text-anchor="middle" fill="{INK_900}" stroke="none" font-family="IBM Plex Sans" font-size="12" font-weight="700">CHELA</text>
+                <!-- Isometric hydraulic-elevator cutaway (v2, 2026-09-26): replaces
+                     the flat 2D line-art schematic, which read as too plain and
+                     left too much empty space in this column. Built as a proper
+                     axonometric technical illustration — shaft wireframe (2
+                     floors) with the cabin as a shaded solid, a side-mounted
+                     hydraulic ram running from the pit to the cabin underside,
+                     and a compact ground-level power unit (oil tank + motor)
+                     with the pressure line drawn in PERA red, per real hydraulic-
+                     schematic convention — since PERA's own product line is
+                     predominantly hydraulic elevators. Every coordinate below is
+                     the output of a small isometric-projection generator (dev
+                     scratch, not checked in); colors are hand-picked shades of
+                     the site's ink/slate palette plus the one red accent, kept
+                     literal here since this is a single fixed illustration. -->
+                <svg viewBox="0 0 309 383" width="280" height="347" font-family="IBM Plex Sans">
+                    <ellipse cx="186.9" cy="358.2" rx="89.8" ry="28.7" fill="#0d1720" opacity="0.10"></ellipse>
+                    <line x1="94.4" y1="205.2" x2="181.7" y2="255.6" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="181.7" y1="255.6" x2="119.3" y2="291.6" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="119.3" y1="291.6" x2="32.0" y2="241.2" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="32.0" y1="241.2" x2="94.4" y2="205.2" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="94.4" y1="30.0" x2="181.7" y2="80.4" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="181.7" y1="80.4" x2="119.3" y2="116.4" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="119.3" y1="116.4" x2="32.0" y2="66.0" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="32.0" y1="66.0" x2="94.4" y2="30.0" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="94.4" y1="205.2" x2="94.4" y2="30.0" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="181.7" y1="255.6" x2="181.7" y2="80.4" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="119.3" y1="291.6" x2="119.3" y2="116.4" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <line x1="32.0" y1="241.2" x2="32.0" y2="66.0" stroke="#c7c9cb" stroke-width="1.1"></line>
+                    <polygon points="94.4,117.6 181.7,168.0 119.3,204.0 32.0,153.6" fill="none" stroke="#c7c9cb" stroke-width="0.9" stroke-dasharray="2 4"></polygon>
+                    <line x1="94.4" y1="260.4" x2="181.7" y2="310.8" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="181.7" y1="310.8" x2="119.3" y2="346.8" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="119.3" y1="346.8" x2="32.0" y2="296.4" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="32.0" y1="296.4" x2="94.4" y2="260.4" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="94.4" y1="205.2" x2="181.7" y2="255.6" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="181.7" y1="255.6" x2="119.3" y2="291.6" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="119.3" y1="291.6" x2="32.0" y2="241.2" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="32.0" y1="241.2" x2="94.4" y2="205.2" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="94.4" y1="260.4" x2="94.4" y2="205.2" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="181.7" y1="310.8" x2="181.7" y2="255.6" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="119.3" y1="346.8" x2="119.3" y2="291.6" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <line x1="32.0" y1="296.4" x2="32.0" y2="241.2" stroke="#999da2" stroke-width="0.9" stroke-dasharray="2 4"></line>
+                    <polygon points="94.4,30.0 181.7,80.4 119.3,116.4 32.0,66.0" fill="#e3e4e5" fill-opacity="0.4" stroke="#c7c9cb" stroke-width="1"></polygon>
+                    <polygon points="94.4,54.0 163.0,93.6 119.3,118.8 50.8,79.2" fill="#979da3" stroke="#101820" stroke-width="1.2"></polygon>
+                    <polygon points="163.0,159.6 119.3,184.8 119.3,118.8 163.0,93.6" fill="#343f4b" stroke="#101820" stroke-width="1.2"></polygon>
+                    <polygon points="50.8,145.2 119.3,184.8 119.3,118.8 50.8,79.2" fill="#111a24" stroke="#101820" stroke-width="1.2"></polygon>
+                    <line x1="141.2" y1="168.6" x2="141.2" y2="109.8" stroke="#69717a" stroke-width="1.1"></line>
+                    <line x1="159.9" y1="120.5" x2="122.5" y2="142.1" stroke="#525c66" stroke-width="0.8" stroke-dasharray="1 3"></line>
+                    <line x1="94.4" y1="208.1" x2="94.4" y2="32.9" stroke="#999da2" stroke-width="0.8" stroke-dasharray="1 4"></line>
+                    <line x1="176.7" y1="255.6" x2="176.7" y2="80.4" stroke="#999da2" stroke-width="0.8" stroke-dasharray="1 4"></line>
+                    <polygon points="176.3,194.9 175.0,195.5 173.6,196.1 172.1,196.5 170.5,196.8 168.8,197.0 167.1,197.1 165.5,197.0 163.8,196.8 162.2,196.5 160.7,196.1 159.3,195.5 158.0,194.9 156.9,194.1 155.9,193.3 155.2,192.5 154.7,191.5 154.3,190.6 154.2,189.6 154.3,188.6 154.7,187.7 155.2,186.7 155.9,185.9 156.9,185.1 158.0,184.3 159.3,183.7 160.7,183.1 162.2,182.7 163.8,182.4 165.5,182.2 167.1,182.1 168.8,182.2 170.5,182.4 172.1,182.7 173.6,183.1 175.0,183.7 176.3,184.3 177.4,185.1 178.3,185.9 179.1,186.7 179.6,187.7 180.0,188.6 180.1,189.6 180.0,190.6 179.6,191.5 179.1,192.5 178.3,193.3 177.4,194.1" fill="#9b9fa4" stroke="#101820" stroke-width="1.1"></polygon>
+                    <polygon points="180.1,332.4 180.0,333.2 179.8,334.0 179.4,334.7 179.0,335.4 178.3,336.1 177.6,336.8 176.8,337.4 175.8,337.9 174.7,338.4 173.6,338.9 172.4,339.2 171.1,339.5 169.8,339.7 168.5,339.8 167.1,339.9 165.8,339.8 164.5,339.7 163.1,339.5 161.9,339.2 160.7,338.9 159.5,338.4 158.5,337.9 157.5,337.4 156.7,336.8 155.9,336.1 155.3,335.4 154.8,334.7 154.5,334.0 154.3,333.2 154.2,332.4 154.2,189.6 154.3,190.4 154.5,191.2 154.8,191.9 155.3,192.6 155.9,193.3 156.7,194.0 157.5,194.6 158.5,195.1 159.5,195.6 160.7,196.1 161.9,196.4 163.1,196.7 164.5,196.9 165.8,197.0 167.1,197.1 168.5,197.0 169.8,196.9 171.1,196.7 172.4,196.4 173.6,196.1 174.7,195.6 175.8,195.1 176.8,194.6 177.6,194.0 178.3,193.3 179.0,192.6 179.4,191.9 179.8,191.2 180.0,190.4 180.1,189.6" fill="#525a61" stroke="#101820" stroke-width="1.1"></polygon>
+                    <polygon points="171.9,192.3 171.2,192.7 170.5,193.0 169.7,193.2 168.9,193.4 168.0,193.4 167.1,193.5 166.3,193.4 165.4,193.4 164.6,193.2 163.8,193.0 163.1,192.7 162.4,192.3 161.8,192.0 161.3,191.5 160.9,191.1 160.6,190.6 160.5,190.1 160.4,189.6 160.5,189.1 160.6,188.6 160.9,188.1 161.3,187.7 161.8,187.2 162.4,186.9 163.1,186.5 163.8,186.2 164.6,186.0 165.4,185.8 166.3,185.8 167.1,185.7 168.0,185.8 168.9,185.8 169.7,186.0 170.5,186.2 171.2,186.5 171.9,186.9 172.5,187.2 173.0,187.7 173.4,188.1 173.6,188.6 173.8,189.1 173.9,189.6 173.8,190.1 173.6,190.6 173.4,191.1 173.0,191.5 172.5,192.0" fill="#e0e1e2" stroke="#101820" stroke-width="0.9"></polygon>
+                    <polygon points="173.9,250.8 173.8,251.2 173.7,251.6 173.5,252.0 173.3,252.4 173.0,252.7 172.6,253.1 172.1,253.4 171.6,253.7 171.1,253.9 170.5,254.2 169.9,254.3 169.2,254.5 168.5,254.6 167.8,254.7 167.1,254.7 166.4,254.7 165.7,254.6 165.1,254.5 164.4,254.3 163.8,254.2 163.2,253.9 162.6,253.7 162.1,253.4 161.7,253.1 161.3,252.7 161.0,252.4 160.7,252.0 160.6,251.6 160.5,251.2 160.4,250.8 160.4,189.6 160.5,190.0 160.6,190.4 160.7,190.8 161.0,191.2 161.3,191.5 161.7,191.9 162.1,192.2 162.6,192.5 163.2,192.7 163.8,193.0 164.4,193.1 165.1,193.3 165.7,193.4 166.4,193.5 167.1,193.5 167.8,193.5 168.5,193.4 169.2,193.3 169.9,193.1 170.5,193.0 171.1,192.7 171.6,192.5 172.1,192.2 172.6,191.9 173.0,191.5 173.3,191.2 173.5,190.8 173.7,190.4 173.8,190.0 173.9,189.6" fill="#caccce" stroke="#101820" stroke-width="0.9"></polygon>
+                    <line x1="169.0" y1="185.4" x2="151.6" y2="166.2" stroke="#101820" stroke-width="1.6"></line>
+                    <polygon points="223.3,223.2 279.4,255.6 230.5,283.8 174.4,251.4" fill="#a3acb5" stroke="#101820" stroke-width="1.2"></polygon>
+                    <polygon points="279.4,312.0 230.5,340.2 230.5,283.8 279.4,255.6" fill="#4b5d6e" stroke="#101820" stroke-width="1.2"></polygon>
+                    <polygon points="174.4,307.8 230.5,340.2 230.5,283.8 174.4,251.4" fill="#24323f" stroke="#101820" stroke-width="1.2"></polygon>
+                    <polygon points="232.8,222.7 231.5,223.4 230.0,224.0 228.4,224.4 226.8,224.7 225.0,224.9 223.3,225.0 221.5,224.9 219.8,224.7 218.1,224.4 216.5,224.0 215.0,223.4 213.7,222.7 212.5,222.0 211.6,221.1 210.8,220.2 210.2,219.2 209.9,218.2 209.7,217.2 209.9,216.2 210.2,215.2 210.8,214.2 211.6,213.3 212.5,212.4 213.7,211.7 215.0,211.0 216.5,210.4 218.1,210.0 219.8,209.7 221.5,209.5 223.3,209.4 225.0,209.5 226.8,209.7 228.4,210.0 230.0,210.4 231.5,211.0 232.8,211.7 234.0,212.4 235.0,213.3 235.8,214.2 236.3,215.2 236.7,216.2 236.8,217.2 236.7,218.2 236.3,219.2 235.8,220.2 235.0,221.1 234.0,222.0" fill="#9b9fa4" stroke="#101820" stroke-width="1"></polygon>
+                    <polygon points="236.8,240.0 236.7,240.8 236.5,241.6 236.1,242.4 235.6,243.2 235.0,243.9 234.2,244.6 233.3,245.2 232.3,245.8 231.2,246.3 230.0,246.8 228.8,247.1 227.4,247.4 226.1,247.6 224.7,247.8 223.3,247.8 221.9,247.8 220.5,247.6 219.1,247.4 217.8,247.1 216.5,246.8 215.3,246.3 214.2,245.8 213.2,245.2 212.3,244.6 211.6,243.9 210.9,243.2 210.4,242.4 210.0,241.6 209.8,240.8 209.7,240.0 209.7,217.2 209.8,218.0 210.0,218.8 210.4,219.6 210.9,220.4 211.6,221.1 212.3,221.8 213.2,222.4 214.2,223.0 215.3,223.5 216.5,224.0 217.8,224.3 219.1,224.6 220.5,224.8 221.9,225.0 223.3,225.0 224.7,225.0 226.1,224.8 227.4,224.6 228.8,224.3 230.0,224.0 231.2,223.5 232.3,223.0 233.3,222.4 234.2,221.8 235.0,221.1 235.6,220.4 236.1,219.6 236.5,218.8 236.7,218.0 236.8,217.2" fill="#525a61" stroke="#101820" stroke-width="1"></polygon>
+                    <polygon points="240.9,230.5 260.7,241.9 240.9,253.3 221.2,241.9" fill="#d1d3d5" stroke="#101820" stroke-width="1"></polygon>
+                    <polygon points="260.7,256.8 240.9,268.2 240.9,253.3 260.7,241.9" fill="#a5a9ad" stroke="#101820" stroke-width="1"></polygon>
+                    <polygon points="221.2,256.8 240.9,268.2 240.9,253.3 221.2,241.9" fill="#6b6e71" stroke="#101820" stroke-width="1"></polygon>
+                    <line x1="212.9" y1="278.4" x2="205.4" y2="274.1" stroke="#c62828" stroke-width="1.8"></line>
+                    <line x1="205.4" y1="274.1" x2="184.6" y2="335.3" stroke="#c62828" stroke-width="1.8"></line>
+                    <line x1="184.6" y1="335.3" x2="171.5" y2="333.7" stroke="#c62828" stroke-width="1.8"></line>
+                    <circle cx="212.9" cy="278.4" r="2" fill="#c62828"></circle>
+                    <circle cx="205.4" cy="274.1" r="2" fill="#c62828"></circle>
+                    <text x="30.0" y="196.8" text-anchor="end" fill="#101820" stroke="none" font-family="IBM Plex Sans" font-size="13" font-weight="700">EG</text>
+                    <text x="30.0" y="99.6" text-anchor="end" fill="#101820" stroke="none" font-family="IBM Plex Sans" font-size="13" font-weight="700">1</text>
+                    <line x1="125.6" y1="295.2" x2="130.8" y2="298.2" stroke="#999da2" stroke-width="0.8"></line>
+                    <line x1="125.6" y1="350.4" x2="130.8" y2="353.4" stroke="#999da2" stroke-width="0.8"></line>
+                    <line x1="128.7" y1="297.0" x2="128.7" y2="352.2" stroke="#999da2" stroke-width="0.8"></line>
+                    <text x="132.9" y="325.8" text-anchor="start" fill="#999da2" stroke="none" font-family="IBM Plex Sans" font-size="10" font-weight="600">SG</text>
                 </svg>
             </div>
         </div>
     </section>
 
-    <section class="bg-[{PAPER_50}] py-[76px] px-6">
+    <section class="bg-[{PAPER_50}] py-[56px] px-6">
         <div class="max-w-5xl mx-auto">
-            <div class="max-w-xl flex flex-col gap-2 mb-9">
+            <div class="max-w-xl flex flex-col gap-2 mb-7">
                 <span class="text-xs font-semibold tracking-widest uppercase text-[{SLATE_600}]">{lang_nodes(ABOUT_PERA_EYEBROW)}</span>
                 <h2 class="font-display break-words text-2xl font-semibold text-[{INK_950}]">{lang_nodes(ABOUT_PERA_H2)}</h2>
             </div>
@@ -458,8 +631,38 @@ def render_pera():
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="mt-7 relative overflow-hidden rounded-xl flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 p-6 sm:p-7"
+    <section id="{KFW_ANCHOR_ID}" class="bg-white py-[56px] px-6">
+        <div class="max-w-5xl mx-auto">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[{PAPER_50}] border mb-5" style="border-color:#cfe4dd;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2f5347" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.5 2.5 5-5"></path></svg>
+                <span class="text-[11.5px] font-bold" style="color:#2f5347;">{lang_nodes(KFW_BADGE)}</span>
+            </span>
+            <div class="max-w-xl flex flex-col gap-2 mb-5">
+                <span class="text-xs font-semibold tracking-widest uppercase text-[{SLATE_600}]">{lang_nodes(KFW_EYEBROW)}</span>
+                <h2 class="font-display break-words text-2xl font-semibold text-[{INK_950}]">{lang_nodes(KFW_H2)}</h2>
+            </div>
+            <p class="text-[15px] leading-relaxed text-[{SLATE_700}] max-w-2xl">{lang_nodes(KFW_LEAD, tag="span", display="block")}</p>
+
+            <div class="grid md:grid-cols-[1.2fr_0.8fr] gap-7 items-start mt-6">
+                <div>
+                    <h3 class="text-[13px] font-bold uppercase tracking-wide text-[{INK_950}] mb-4">{lang_nodes(KFW_STEPS_H3)}</h3>
+                    <div class="flex flex-col gap-4">{kfw_steps_html}
+                    </div>
+                </div>
+                <div class="bg-[{PAPER_50}] border-l-[3px] rounded-r-lg py-5 px-6" style="border-color:#2f5347;">
+                    <span class="block text-[12px] font-bold uppercase tracking-wide mb-1.5" style="color:#2f5347;">{lang_nodes(KFW_WHO_LABEL)}</span>
+                    <p class="text-[13.5px] leading-relaxed text-[{SLATE_700}]">{lang_nodes(KFW_WHO_TEXT, tag="span", display="block")}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[{PAPER_50}] py-[56px] px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="relative overflow-hidden rounded-xl flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 p-6 sm:p-7"
                  style="background:linear-gradient(100deg, #0d1922 0%, {INK_900} 55%, #1c2c3c 100%);">
                 <div class="absolute pointer-events-none" style="right:-40px; top:-60px; width:220px; height:220px; opacity:.35; transform:rotate(12deg); background:conic-gradient(from 45deg, #c62828 0deg 60deg, transparent 60deg 120deg, #a01f1f 120deg 180deg, transparent 180deg 240deg, #c62828 240deg 300deg, transparent 300deg 360deg);"></div>
                 <div class="flex-shrink-0 relative z-10 w-[70px] h-[96px] rounded-md shadow-lg overflow-hidden" style="background:#1c2c3c;">
@@ -506,15 +709,15 @@ def render_pera():
         </div>
     </section>
 
-    <section class="bg-white py-[76px] px-6">
+    <section class="bg-white py-[56px] px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="font-display break-words text-2xl font-semibold text-[{INK_950}] mb-9">{lang_nodes(WHAT_IT_MEANS_H2)}</h2>
+            <h2 class="font-display break-words text-2xl font-semibold text-[{INK_950}] mb-7">{lang_nodes(WHAT_IT_MEANS_H2)}</h2>
             <div class="grid md:grid-cols-3 gap-7">{means_html}
             </div>
         </div>
     </section>
 
-    <section class="bg-[{INK_900}] py-[76px] px-6 text-center">
+    <section class="bg-[{INK_900}] py-[56px] px-6 text-center">
         <div class="max-w-xl mx-auto flex flex-col items-center gap-5 py-1">
             <h2 class="font-display break-words text-3xl font-semibold text-white">{lang_nodes(PERA_CTA_H2, tag="span", display="block")}</h2>
             <a href="/contact" class="mt-1 px-8 py-3.5 rounded-md bg-white text-[{INK_900}] font-bold text-sm">{lang_nodes(CTA_BTN)}</a>
@@ -618,6 +821,19 @@ def render_pera():
                         <span class="w-[22px] h-[22px] rounded-full bg-[{INK_950}] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">2</span>
                         <h4 class="font-display text-[15px] font-semibold text-[{INK_950}]">{lang_nodes(Q_S2_H)}</h4>
                     </div>
+                    <label class="flex items-center gap-3 rounded-lg px-4 py-3.5 mb-[14px] cursor-pointer select-none border" style="background:#eef4f2; border-color:#cfe4dd;">
+                        <input type="checkbox" id="kfw-toggle" name="kfw_159_interest" value="Yes" onchange="toggleKfwUnits(this)" class="w-[18px] h-[18px] flex-shrink-0" style="accent-color:#2f5347;">
+                        <span class="flex flex-col gap-0.5">
+                            <span class="text-[13.5px] font-bold" style="color:#2f5347;">{lang_nodes(Q_F_KFW_INTEREST)}</span>
+                            <span class="text-[11.5px] leading-snug" style="color:#2f5347; opacity:.85;">{lang_nodes(Q_F_KFW_HINT)}</span>
+                        </span>
+                    </label>
+                    <div id="kfw-units-wrap" class="hidden flex-col gap-2 mb-[14px]">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_UNITS)} <span class="font-medium text-[{SLATE_400}]">({lang_nodes(Q_OPTIONAL)})</span></span>
+                            <input type="number" name="unit_count" min="1" step="1" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
+                        </label>
+                    </div>
                     <div class="flex flex-col gap-2 mb-[14px]">
                         <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_BTYPE)}</span>
                         <div class="flex flex-wrap gap-2">{btype_html}</div>
@@ -630,7 +846,7 @@ def render_pera():
                         <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_USE)} <span class="font-medium text-[{SLATE_400}]">({lang_nodes(Q_MULTI)})</span></span>
                         <div class="flex flex-wrap gap-2">{use_html}</div>
                     </div>
-                    <div class="grid sm:grid-cols-2 gap-[14px]">
+                    <div class="grid sm:grid-cols-2 gap-[14px] mb-[14px]">
                         <label class="flex flex-col gap-2">
                             <span class="text-[13px] font-semibold text-[{INK_900}]">{lang_nodes(Q_F_LOCATION)}</span>
                             <input type="text" name="location" placeholder="{Q_F_LOCATION_PH['de']}" class="border border-[{LINE}] rounded-md px-3.5 py-3 text-[14.5px] text-[{INK_900}]">
@@ -727,11 +943,30 @@ def render_pera():
             else if (e.key === 'ArrowRight') catalogNextPage();
         }}
 
-        function openQuoteForm() {{
+        function openQuoteForm(kfw) {{
             var modal = document.getElementById('quote-modal');
             modal.style.display = 'flex';
             document.body.classList.add('overflow-hidden');
             document.addEventListener('keydown', quoteKeyHandler);
+            if (kfw) {{
+                var cb = document.getElementById('kfw-toggle');
+                if (cb && !cb.checked) {{
+                    cb.checked = true;
+                    toggleKfwUnits(cb);
+                }}
+            }}
+        }}
+
+        function toggleKfwUnits(checkbox) {{
+            var wrap = document.getElementById('kfw-units-wrap');
+            if (!wrap) return;
+            if (checkbox.checked) {{
+                wrap.classList.remove('hidden');
+                wrap.classList.add('flex');
+            }} else {{
+                wrap.classList.add('hidden');
+                wrap.classList.remove('flex');
+            }}
         }}
 
         function closeQuoteForm() {{

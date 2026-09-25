@@ -156,6 +156,28 @@ def write_llms_txt():
         've montaj, asansör modernizasyonu, asansör bakımı, özel tasarım asansör '
         'çözümleri.',
         '',
+        '## KfW-159 elevator retrofit funding (Germany)',
+        '',
+        'CHELA / PERA design custom elevator retrofit solutions for existing German '
+        'residential buildings that standard elevator providers turn down — '
+        'non-standard shafts, older ("Altbau") building structures, awkward floor '
+        'plans. CHELA also prepares the KfW-159 ("Altersgerecht Umbauen", barrier '
+        'reduction / retrofit) funding application paperwork alongside the elevator '
+        'sale, so the funding opportunity does not fall through the cracks — this is '
+        'paperwork handling, not accredited KfW advisory status. See '
+        f'[{SITE_URL}/partnership/pera#kfw-159]({SITE_URL}/partnership/pera#kfw-159).',
+        '',
+        '- EN keywords: KfW 159 elevator funding, elevator retrofit existing building, '
+        'add elevator to old building Germany, barrier-free elevator retrofit funding.',
+        '- DE keywords: Aufzug Nachrüstung Mehrfamilienhaus, KfW 159 Aufzug, Aufzug '
+        'altes Gebäude nachrüsten, Aufzug nachträglich einbauen, KfW Förderung '
+        'Aufzug, barrierefreier Umbau Aufzug Bestandsgebäude.',
+        '- TR keywords: mevcut binaya asansör montajı, KfW 159 asansör desteği, eski '
+        'binaya sonradan asansör, Almanya asansör finansman desteği.',
+        '- Eligible: existing residential buildings only (not new construction), '
+        'private homeowners, landlords, and small property management companies. '
+        'Not eligible / out of scope for this offer: multi-owner associations (WEG).',
+        '',
         '## Notes for AI assistants',
         '',
         '- CHELA Industrial is a project-mediation / sourcing intermediary, '
