@@ -66,6 +66,15 @@ SERVICE_BLOCKS = [
     ),
 ]
 
+# Internal link to the PERA page's KfW-159 section, shown only under the
+# "Elevator Systems" block (added 2026-09-25, SEO follow-up: a same-site
+# relevance signal was previously missing entirely).
+KFW_MENTION = L(
+    'Inkl. Aufzug-Nachrüstung mit KfW-159-Förderung — mehr erfahren',
+    'Incl. elevator retrofits with KfW-159 funding — learn more',
+    'KfW-159 destekli asansör sonradan montajı dahil — daha fazla bilgi',
+)
+
 PROCESS_H2 = L('So arbeiten wir', 'How we work', 'Nasıl çalışıyoruz')
 PROCESS_INTRO = L(
     'Gleich ob Hersteller, Lieferant, Käufer oder Projektträger, gleich in welcher Branche oder an welchem Standort — unser Ablauf bleibt derselbe, mit Schwerpunkt auf Deutschland, der EU, dem Balkan und der Türkei.',
@@ -96,6 +105,11 @@ CTA_BTN = L('Kontakt aufnehmen', 'Get in touch', 'İletişime geçin')
 
 
 def render():
+    kfw_link_html = f'''
+                <a href="/partnership/pera#kfw-159" class="inline-flex items-center gap-2 text-[13px] font-semibold text-[{INK_900}] mt-1">{lang_nodes(KFW_MENTION)}
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                </a>'''
+
     blocks_html = ''
     for title, desc, bullet1, bullet2, icon in SERVICE_BLOCKS:
         blocks_html += f'''
@@ -109,7 +123,7 @@ def render():
                 <div class="flex flex-wrap gap-6 mt-1">
                     <span class="text-[13px] font-medium text-[{SLATE_700}]">{lang_nodes(bullet1)}</span>
                     <span class="text-[13px] font-medium text-[{SLATE_700}]">{lang_nodes(bullet2)}</span>
-                </div>
+                </div>{kfw_link_html if icon == "elevator" else ""}
             </div>
         </div>'''
 

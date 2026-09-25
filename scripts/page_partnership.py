@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from common import L, lang_nodes, page_html, FORMSPREE_ENDPOINT, INK_950, INK_900, PAPER_50, SLATE_700, SLATE_600, SLATE_400, SLATE_300, LINE
+from common import L, lang_nodes, page_html, FORMSPREE_ENDPOINT, SITE_URL, INK_950, INK_900, PAPER_50, SLATE_700, SLATE_600, SLATE_400, SLATE_300, LINE
 
 # Both forms on this site (here and the contact page) submit to Formspree
 # (see submitForm() in common.py's LANG_SCRIPT and FORMSPREE_ENDPOINT), which
@@ -253,6 +253,72 @@ KFW_WHO_TEXT = L(
 # card below, whose copy — QUOTE_LABEL / QUOTE_TITLE / QUOTE_DESC — was
 # rewritten to cover both a plain elevator inquiry and a KfW-159 one) so a
 # reader who just finished the funding section flows straight into it.
+
+# ---- Page-specific JSON-LD for the PERA page (added 2026-09-25, SEO
+# follow-up). page_html() already supported an extra `json_ld` param but no
+# page used it. Content below is a direct restatement — same facts, plain
+# text instead of the HTML-entity-encoded copy above (a <script> tag's
+# content isn't HTML-entity-decoded, so &euro;/&amp; would render literally)
+# — of the already-reviewed, already-live KFW_LEAD / KFW_WHO_TEXT / KFW_STEPS
+# copy immediately above. No new facts, nothing invented: Service schema
+# describes the KfW-159 retrofit offering, FAQPage mirrors the three points a
+# reader of that section already sees (eligibility, funding amount, process).
+# DE only, matching the DE-canonical pattern page_html() already uses for
+# <title>/<meta description> (search engines/AI crawlers see the German
+# version; the client-side language toggle is a UX layer on top).
+PERA_JSON_LD = f'''<script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@graph": [
+        {{
+          "@type": "Service",
+          "serviceType": "Aufzug-Nachrüstung mit KfW-159-Förderung",
+          "name": "Aufzug-Nachrüstung mit KfW-159-Förderung",
+          "description": "PERA entwickelt individuelle Aufzugslösungen für Bestandsgebäude, die Standardanbieter ablehnen — nicht-normgerechte Schächte, Altbaustrukturen, ungünstige Grundrisse. CHELA übernimmt parallel die KfW-159-Antragsunterlagen, damit die Förderung nicht auf der Strecke bleibt.",
+          "provider": {{
+            "@type": "Organization",
+            "name": "CHELA Industrial UG (haftungsbeschränkt)",
+            "url": "{SITE_URL}"
+          }},
+          "areaServed": "DE",
+          "audience": {{
+            "@type": "Audience",
+            "audienceType": "Eigentümer bestehender Wohngebäude"
+          }},
+          "url": "{SITE_URL}/partnership/pera#kfw-159"
+        }},
+        {{
+          "@type": "FAQPage",
+          "mainEntity": [
+            {{
+              "@type": "Question",
+              "name": "Wer kann die KfW-159-Förderung für eine Aufzug-Nachrüstung nutzen?",
+              "acceptedAnswer": {{
+                "@type": "Answer",
+                "text": "Eigentümer bestehender Gebäude — private Eigentümer, Vermieter und kleinere Hausverwaltungen. Nicht für Neubauten, nicht für Eigentümergemeinschaften (WEG)."
+              }}
+            }},
+            {{
+              "@type": "Question",
+              "name": "Wie hoch ist die KfW-159-Förderung pro Wohneinheit?",
+              "acceptedAnswer": {{
+                "@type": "Answer",
+                "text": "Bis zu 50.000 Euro Darlehen je Wohneinheit für ein bestehendes Wohngebäude."
+              }}
+            }},
+            {{
+              "@type": "Question",
+              "name": "Wie läuft der Förderprozess ab?",
+              "acceptedAnswer": {{
+                "@type": "Answer",
+                "text": "Drei Schritte: zuerst die Förderfähigkeit prüfen, dann erstellt PERA das technische Konzept und den Kostenvoranschlag, anschließend bereitet CHELA die Antragsunterlagen vor, die Sie über Ihre eigene Hausbank einreichen."
+              }}
+            }}
+          ]
+        }}
+      ]
+    }}
+    </script>'''
 
 # ---- E-Katalog: in-page PDF.js viewer for PERA's product catalog (single
 # English-language PDF, shown identically across all three site languages
@@ -1041,7 +1107,7 @@ def render_pera():
         }}
     </script>
 '''
-    return page_html('pera', PERA_TITLE, PERA_DESC, '/partnership/pera', body, keywords=PERA_KEYWORDS)
+    return page_html('pera', PERA_TITLE, PERA_DESC, '/partnership/pera', body, json_ld=PERA_JSON_LD, keywords=PERA_KEYWORDS)
 
 
 # ---------------------------------------------------------- INDUSTRIES PAGE---

@@ -78,6 +78,13 @@ PARTNERSHIP_P = L(
     'CHELA Industrial, bir Türk asansör mühendislik şirketi olan PERA Mühendislik ile yakın iş birliği içinde çalışır. Belirlenen Avrupa temsilcisi olarak, Avrupa projeleri ile Türk asansör mühendislik uzmanlığı arasında doğrudan bir bağlantı kuruyoruz.',
 )
 PARTNERSHIP_LINK = L('Mehr über die Partnerschaft', 'More about the partnership', 'Ortaklık hakkında daha fazla bilgi')
+# Internal link to the PERA page's KfW-159 section (added 2026-09-25, SEO
+# follow-up: a same-site relevance signal was previously missing entirely).
+KFW_MENTION = L(
+    'Inklusive Aufzug-Nachrüstung mit KfW-159-Förderung',
+    'Including elevator retrofits with KfW-159 funding',
+    'KfW-159 destekli asansör sonradan montajı dahil',
+)
 
 WHY_H2 = L('Warum CHELA Industrial', 'Why CHELA Industrial', 'Neden CHELA Industrial')
 WHY_CARDS = [
@@ -161,6 +168,9 @@ def render():
                 <p class="text-[15px] leading-relaxed text-[{SLATE_300}]">{lang_nodes(PARTNERSHIP_P, tag="span", display="block")}</p>
                 <a href="/partnership/pera" class="inline-flex items-center gap-2 text-white font-semibold text-sm mt-1">{lang_nodes(PARTNERSHIP_LINK)}
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+                </a>
+                <a href="/partnership/pera#kfw-159" class="inline-flex items-center gap-2 text-[{SLATE_300}] hover:text-white text-sm">{lang_nodes(KFW_MENTION)}
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
                 </a>
             </div>
             <div class="flex justify-center">

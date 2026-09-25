@@ -7,10 +7,23 @@ the connected local repo.
 """
 import os
 import shutil
+import subprocess
 from datetime import date
 
-OUT = os.path.join(os.path.dirname(__file__), '..', 'out')
-ASSETS_SRC = os.path.join(os.path.dirname(__file__), '..', 'assets')
+REPO_ROOT = os.path.join(os.path.dirname(__file__), '..')
+OUT = os.path.join(REPO_ROOT, 'out')
+ASSETS_SRC = os.path.join(REPO_ROOT, 'assets')
+
+# The exact tag every page renders by default (see common.py's page_html())
+# — the Tailwind Play CDN script. It's fine for local preview/dev renders,
+# but in production it means every page ships an unminified ~400KB script
+# that generates all CSS at runtime in the browser (render-blocking, causes
+# a flash of unstyled content, and is explicitly documented by Tailwind as
+# not meant for production). compile_tailwind_css() below replaces it with a
+# small, purged, pre-compiled stylesheet — same approach already used by the
+# QA screenshot pipeline (qa.input.css / tailwind.qa.config.js), just wired
+# into the real production build instead of a throwaway copy.
+CDN_SCRIPT_TAG = '<script src="https://cdn.tailwindcss.com"></script>'
 
 import page_home
 import page_about
@@ -237,6 +250,72 @@ def write_llms_txt():
     print(f'wrote {path}')
 
 
+def compile_tailwind_css():
+    """
+    Runs the Tailwind CLI over the just-written out/**/*.html to produce a
+    small, purged, minified stylesheet at out/assets/styles.css, then swaps
+    the Tailwind CDN <script> tag for a <link> to it across every rendered
+    page. Requires `npx`/Node and `npm install` having been run in the repo
+    (tailwindcss is already a devDependency in package.json).
+
+    If the compiler isn't available or the run fails for any reason, this
+    prints a warning and leaves every page on the CDN script — the site
+    still works, it just ships the slower CDN version until this can run.
+    Never lets a missing local Node setup break `build.py` outright.
+    """
+    css_out = os.path.join(OUT, 'assets', 'styles.css')
+    cmd = [
+        'npx', 'tailwindcss',
+        '-c', os.path.join(REPO_ROOT, 'tailwind.config.js'),
+        '-i', os.path.join(REPO_ROOT, 'tailwind.input.css'),
+        '-o', css_out,
+        '--minify',
+    ]
+    try:
+        result = subprocess.run(
+            cmd, cwd=REPO_ROOT, capture_output=True, text=True, timeout=120,
+        )
+    except (OSError, subprocess.TimeoutExpired) as e:
+        print(f'WARNING: could not run Tailwind CLI ({e}) — pages will keep '
+              f'using the Tailwind CDN script. Run "npm install" in '
+              f'{REPO_ROOT} to enable the compiled/minified production CSS.')
+        return
+
+    if result.returncode != 0 or not os.path.exists(css_out):
+        print('WARNING: Tailwind CLI failed — pages will keep using the '
+              'Tailwind CDN script instead of compiled CSS.')
+        if result.stderr:
+            print(result.stderr.strip())
+        return
+
+    css_size = os.path.getsize(css_out)
+    if css_size < 500:
+        # Suspiciously small — almost certainly means the content glob found
+        # no classes (e.g. run from the wrong cwd) rather than a genuinely
+        # tiny stylesheet. Don't wire in something that's probably broken.
+        print(f'WARNING: compiled Tailwind CSS is only {css_size} bytes — '
+              f'looks wrong, keeping the CDN script instead.')
+        os.remove(css_out)
+        return
+
+    link_tag = '<link rel="stylesheet" href="/assets/styles.css">'
+    swapped = 0
+    for root, _dirs, files in os.walk(OUT):
+        for name in files:
+            if not name.endswith('.html'):
+                continue
+            path = os.path.join(root, name)
+            with open(path, 'r', encoding='utf-8') as f:
+                html = f.read()
+            if CDN_SCRIPT_TAG in html:
+                html = html.replace(CDN_SCRIPT_TAG, link_tag)
+                with open(path, 'w', encoding='utf-8') as f:
+                    f.write(html)
+                swapped += 1
+    print(f'compiled Tailwind CSS -> {css_out} ({css_size} bytes), '
+          f'linked from {swapped} page(s)')
+
+
 def main():
     if os.path.exists(OUT):
         shutil.rmtree(OUT)
@@ -254,6 +333,8 @@ def main():
     assets_out = os.path.join(OUT, 'assets')
     shutil.copytree(ASSETS_SRC, assets_out)
     print(f'copied assets -> {assets_out}')
+
+    compile_tailwind_css()
 
     # Keep the existing CNAME so GitHub Pages keeps serving the custom domain.
     with open(os.path.join(OUT, 'CNAME'), 'w', encoding='utf-8') as f:
