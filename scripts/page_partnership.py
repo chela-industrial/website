@@ -189,6 +189,59 @@ PERA_QUOTE = L(
 )
 PERA_QUOTE_SRC = L('Unternehmensphilosophie, PERA Mühendislik', 'Company philosophy, PERA Mühendislik', 'Şirket felsefesi, PERA Mühendislik')
 
+# ---- "No shaft / non-standard building" differentiator section (added
+# 2026-09-26, content-strategy follow-up to the 2026-09-25 SEO fixes). Per
+# claude/KfW_Subsidy_Consulting_Channel_Exploration_2026-09-23.md, this is
+# the one potentially uncontested market angle found in research — no
+# competitor combines subsidy guidance with engineering for buildings that
+# have no room for a standard internal shaft. Kept factually conservative:
+# describes the well-established "self-supporting external shaft" (Anbau-/
+# Außenaufzug) retrofit technique, mirrors wording already reviewed and live
+# in KFW_LEAD ("nicht-normgerechte Schächte, Altbaustrukturen, ungünstige
+# Grundrisse"), and makes no quantified or proprietary-technology claims —
+# no invented footprint/cost/time figures, nothing about specific patented
+# mechanisms. Sits between "Über PERA Mühendislik" and the KfW-159 section:
+# capability first, financing mechanism second. Anchor id lets this be
+# deep-linked later (emails, ads) as /partnership/pera#ohne-schacht.
+NOSHAFT_ANCHOR_ID = 'ohne-schacht'
+NOSHAFT_EYEBROW = L('Technische Lösungen', 'Engineering', 'Mühendislik')
+NOSHAFT_H2 = L(
+    'Aufzug-Nachrüstung auch ohne vorhandenen Schacht',
+    'Elevator Retrofits Even Without an Existing Shaft',
+    'Mevcut Boşluk Olmadan da Asansör Sonradan Montajı',
+)
+NOSHAFT_LEAD = L(
+    'Die meisten Standardanbieter lehnen eine Nachrüstung ab, sobald kein Platz für einen klassischen '
+    'Aufzugsschacht vorhanden ist — typisch für Altbauten, Gebäude mit ungünstigem Grundriss oder ohne '
+    'reservierte Schachtfläche. Genau für diese Fälle plant PERA individuelle Lösungen: selbsttragende '
+    'Schachtkonstruktionen an der Gebäudeaußenseite, Anpassungen an bestehende Treppenhäuser oder Innenhöfe '
+    'und Aufzugstechnik, die auf das jeweilige Gebäude zugeschnitten ist statt auf ein Katalogmaß.',
+    'Most standard providers decline a retrofit as soon as there\'s no room for a conventional elevator '
+    'shaft — typical for older buildings, awkward floor plans, or buildings with no shaft space ever '
+    'reserved. These are exactly the cases PERA plans custom solutions for: self-supporting shaft '
+    'structures added to the outside of the building, adaptation to existing stairwells or courtyards, '
+    'and elevator engineering built around the specific building rather than a catalog size.',
+    'Çoğu standart sağlayıcı, klasik bir asansör kuyusu için yer olmadığında sonradan montajı reddeder — '
+    'bu durum eski binalarda, elverişsiz kat planlarında veya hiç kuyu alanı ayrılmamış binalarda tipiktir. '
+    'PERA tam olarak bu durumlar için özel çözümler tasarlar: binanın dışına eklenen kendini taşıyan kuyu '
+    'yapıları, mevcut merdiven boşluklarına veya avlulara uyarlamalar ve katalog ölçüsü yerine binaya özel '
+    'tasarlanan asansör mühendisliği.',
+)
+NOSHAFT_CARDS = [
+    (L('Selbsttragende Außenkonstruktion', 'Self-Supporting External Structure', 'Kendini Taşıyan Dış Yapı'),
+     L('Der Schacht wird als eigenständige Struktur an der Gebäudeaußenseite ergänzt — ohne in die tragende Bausubstanz einzugreifen.',
+       'The shaft is added as an independent structure on the outside of the building — without cutting into the load-bearing fabric.',
+       'Kuyu, binanın taşıyıcı yapısına müdahale etmeden dış cepheye bağımsız bir yapı olarak eklenir.')),
+    (L('Individuelle Planung statt Katalogmaß', 'Custom Engineering, Not a Catalog Size', 'Katalog Ölçüsü Değil, Özel Mühendislik'),
+     L('PERA entwickelt die Aufzugslösung für die tatsächlichen Maße und Gegebenheiten Ihres Gebäudes — auch bei ungewöhnlichen Grundrissen.',
+       'PERA develops the elevator solution around your building\'s actual dimensions and constraints — including unusual floor plans.',
+       'PERA, binanızın gerçek ölçüleri ve koşullarına göre — sıra dışı kat planları dahil — asansör çözümünü geliştirir.')),
+    (L('Für bewohnte Gebäude geeignet', 'Suited to Occupied Buildings', 'Kullanımdaki Binalar İçin Uygun'),
+     L('Die Planung berücksichtigt, dass Bewohner und Betrieb während der Bauphase im Gebäude bleiben.',
+       'Planning accounts for residents and operations remaining in the building throughout construction.',
+       'Planlama, inşaat süresince sakinlerin ve faaliyetlerin binada kalmaya devam etmesini dikkate alır.')),
+]
+
 # ---- KfW-159 retrofit-financing section (added 2026-09-25 per "CHELA
 # Website — KfW-159 / PERAGREEN Content & SEO Brief for Dev"). Sits right
 # after "Über PERA Mühendislik" and before the catalog/quote-request cards —
@@ -245,6 +298,44 @@ KFW_WHO_TEXT = L(
     'Not for new construction, not for multi-owner (WEG) buildings.',
     'Mevcut bina sahipleri — özel mülk sahipleri, kiraya verenler ve küçük ölçekli yönetim şirketleri. '
     'Yeni inşaatlar için değil, çok ortaklı mülkiyet birlikleri (WEG) için değil.',
+)
+# Second lead paragraph (added 2026-09-26, content-strategy follow-up)
+# directly answers two real search queries the target keyword list already
+# names ("Aufzug nachträglich einbauen", "Aufzug altes Gebäude nachrüsten")
+# and bridges to the new NOSHAFT_* section just above this one on the page —
+# deliberately does not quote a cost figure (no confirmed number exists yet;
+# see PERAGREEN note above) and instead explains why one can't be given
+# without a project-specific look.
+KFW_LEAD_2 = L(
+    'Ja — auch in Gebäuden ohne vorhandenen Aufzugsschacht ist eine Nachrüstung in den meisten Fällen '
+    'technisch möglich, etwa durch eine selbsttragende Schachtkonstruktion an der Gebäudeaußenseite. PERA '
+    'plant die passende Lösung individuell für Ihr Gebäude; erst danach lässt sich der Kostenrahmen seriös '
+    'beziffern.',
+    'Yes — even in buildings without an existing elevator shaft, a retrofit is technically possible in most '
+    'cases, for example through a self-supporting shaft structure added to the outside of the building. '
+    'PERA designs the right solution for your specific building; only then can a realistic cost range be '
+    'given.',
+    'Evet — mevcut bir asansör boşluğu olmayan binalarda bile, örneğin binanın dışına eklenen kendini '
+    'taşıyan bir kuyu yapısıyla çoğu durumda sonradan montaj teknik olarak mümkündür. PERA, binanıza özel '
+    'uygun çözümü tasarlar; gerçekçi bir maliyet aralığı ancak bundan sonra verilebilir.',
+)
+# Funding-currency note (added 2026-09-26): clarifies, for anyone still
+# searching for the old KfW 455-B grant, that it's exhausted and KfW 159 (a
+# loan) is the current live route — fact confirmed in
+# claude/KfW_Subsidy_Consulting_Channel_Exploration_2026-09-23.md. Purely
+# clarifies the funding route this page already covers; does not touch the
+# separate, still-undecided question of subsidy consulting as its own
+# revenue channel.
+KFW_CURRENT_NOTE = L(
+    'Hinweis: Der frühere Zuschuss KfW 455-B ist seit dem 30.07.2026 ausgeschöpft und derzeit nicht '
+    'verfügbar. Die KfW 159 (Kredit, kein Zuschuss) ist aktuell die reguläre Förderroute für '
+    'Aufzug-Nachrüstungen in Bestandsgebäuden.',
+    'Note: The former KfW 455-B grant has been exhausted since 30 July 2026 and is currently unavailable. '
+    'KfW 159 (a loan, not a grant) is currently the standard funding route for elevator retrofits in '
+    'existing buildings.',
+    'Not: Eski KfW 455-B hibe programı 30.07.2026 itibarıyla tükenmiştir ve şu anda mevcut değildir. KfW '
+    '159 (hibe değil, kredi) mevcut binalarda asansör sonradan montajı için şu anki standart finansman '
+    'yoludur.',
 )
 # The KfW-159 section deliberately carries no CTA of its own (2026-09-26 dev
 # note) — it used to end in its own "Anfrage stellen" bar, which sat right on
@@ -313,12 +404,79 @@ PERA_JSON_LD = f'''<script type="application/ld+json">
                 "@type": "Answer",
                 "text": "Drei Schritte: zuerst die Förderfähigkeit prüfen, dann erstellt PERA das technische Konzept und den Kostenvoranschlag, anschließend bereitet CHELA die Antragsunterlagen vor, die Sie über Ihre eigene Hausbank einreichen."
               }}
+            }},
+            {{
+              "@type": "Question",
+              "name": "Ist eine Aufzug-Nachrüstung auch ohne vorhandenen Schacht möglich?",
+              "acceptedAnswer": {{
+                "@type": "Answer",
+                "text": "In den meisten Fällen ja. PERA plant dafür individuelle Lösungen, zum Beispiel eine selbsttragende Schachtkonstruktion an der Gebäudeaußenseite, die ohne Eingriff in die tragende Bausubstanz auskommt."
+              }}
+            }},
+            {{
+              "@type": "Question",
+              "name": "Gibt es noch einen Zuschuss (KfW 455-B) für Aufzüge, oder nur einen Kredit?",
+              "acceptedAnswer": {{
+                "@type": "Answer",
+                "text": "Der frühere Zuschuss KfW 455-B ist seit dem 30.07.2026 ausgeschöpft und derzeit nicht verfügbar. Die KfW 159 ist ein zinsgünstiger Kredit, kein Zuschuss, und aktuell die reguläre Förderroute für Aufzug-Nachrüstungen in Bestandsgebäuden."
+              }}
             }}
           ]
         }}
       ]
     }}
     </script>'''
+
+# ---- Visible FAQ block (added 2026-09-26, content-strategy follow-up) ----
+# Mirrors PERA_JSON_LD's FAQPage entity 1:1 (5 Q&As, same wording as the
+# structured data above) so the schema has real, matching visible content —
+# Google's guidance for FAQPage rich-result eligibility requires this; the
+# JSON-LD alone (added 2026-09-25) was invisible-only until now. Rendered as
+# a native <details>/<summary> accordion — no custom JS toggle, so it can't
+# repeat the file:// root-relative-path class of bug from the 2026-09-25
+# regression; works identically under file://, a local server, or prod.
+FAQ_EYEBROW = L('Häufige Fragen', 'FAQ', 'Sıkça Sorulan Sorular')
+FAQ_H2 = L(
+    'Fragen zur Aufzug-Nachrüstung &amp; KfW-159-Förderung',
+    'Questions about Elevator Retrofits &amp; KfW-159 Funding',
+    'Asansör Sonradan Montajı ve KfW-159 Finansmanı Hakkında Sorular',
+)
+FAQ_ITEMS = [
+    (L('Wer kann die KfW-159-Förderung für eine Aufzug-Nachrüstung nutzen?',
+       'Who can use KfW-159 funding for an elevator retrofit?',
+       'KfW-159 finansmanını bir asansör sonradan montajı için kimler kullanabilir?'),
+     KFW_WHO_TEXT),
+    (L('Wie hoch ist die KfW-159-Förderung pro Wohneinheit?',
+       'How much is the KfW-159 funding per residential unit?',
+       'Bağımsız bölüm başına KfW-159 finansmanı ne kadardır?'),
+     L('Bis zu 50.000 &euro; Darlehen je Wohneinheit für ein bestehendes Wohngebäude.',
+       'Up to &euro;50,000 loan per residential unit for an existing residential building.',
+       'Mevcut bir konut binası için bağımsız bölüm başına 50.000 &euro;\'ya kadar kredi.')),
+    (L('Wie läuft der Förderprozess ab?',
+       'How does the funding process work?',
+       'Finansman süreci nasıl işliyor?'),
+     L('Drei Schritte: zuerst die Förderfähigkeit prüfen, dann erstellt PERA das technische Konzept und den '
+       'Kostenvoranschlag, anschließend bereitet CHELA die Antragsunterlagen vor, die Sie über Ihre eigene '
+       'Hausbank einreichen.',
+       'Three steps: first check eligibility, then PERA prepares the technical concept and cost estimate, '
+       'then CHELA prepares the application documents, which you submit through your own bank.',
+       'Üç adım: önce uygunluk kontrol edilir, ardından PERA teknik konsepti ve maliyet teklifini hazırlar, '
+       'son olarak CHELA, kendi bankanız üzerinden sunacağınız başvuru evraklarını hazırlar.')),
+    (L('Ist eine Aufzug-Nachrüstung auch ohne vorhandenen Schacht möglich?',
+       'Is an elevator retrofit possible even without an existing shaft?',
+       'Mevcut bir boşluk olmadan da asansör sonradan montajı mümkün müdür?'),
+     L('In den meisten Fällen ja. PERA plant dafür individuelle Lösungen, zum Beispiel eine selbsttragende '
+       'Schachtkonstruktion an der Gebäudeaußenseite, die ohne Eingriff in die tragende Bausubstanz auskommt.',
+       'In most cases, yes. PERA designs custom solutions for this, for example a self-supporting shaft '
+       'structure added to the outside of the building that doesn\'t require cutting into the load-bearing '
+       'fabric.',
+       'Çoğu durumda evet. PERA bunun için, taşıyıcı yapıya müdahale etmeyen, binanın dışına eklenen '
+       'kendini taşıyan bir kuyu yapısı gibi özel çözümler tasarlar.')),
+    (L('Gibt es noch einen Zuschuss (KfW 455-B) für Aufzüge, oder nur einen Kredit?',
+       'Is there still a grant (KfW 455-B) for elevators, or only a loan?',
+       'Asansörler için hâlâ bir hibe (KfW 455-B) var mı, yoksa yalnızca kredi mi?'),
+     KFW_CURRENT_NOTE),
+]
 
 # ---- E-Katalog: in-page PDF.js viewer for PERA's product catalog (single
 # English-language PDF, shown identically across all three site languages
@@ -527,6 +685,25 @@ def render_pera():
                     <span class="text-[13.5px] leading-relaxed text-[{SLATE_700}]"><strong class="text-[{INK_950}]">{lang_nodes(title)}.</strong> {lang_nodes(desc)}</span>
                 </div>'''
 
+    noshaft_cards_html = ''
+    for title, desc in NOSHAFT_CARDS:
+        noshaft_cards_html += f'''
+        <div class="bg-white border border-[{LINE}] rounded-xl p-6 flex flex-col gap-2">
+            <h3 class="text-[15px] font-semibold text-[{INK_950}]">{lang_nodes(title)}</h3>
+            <p class="text-[13.5px] leading-relaxed text-[{SLATE_600}]">{lang_nodes(desc, tag="span", display="block")}</p>
+        </div>'''
+
+    faq_html = ''
+    for question, answer in FAQ_ITEMS:
+        faq_html += f'''
+            <details class="group border border-[{LINE}] rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between gap-3 px-5 py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="text-[14.5px] font-semibold text-[{INK_950}]">{lang_nodes(question)}</span>
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full border border-[{LINE}] flex items-center justify-center text-[13px] leading-none text-[{SLATE_600}] group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="px-5 pb-5 text-[13.5px] leading-relaxed text-[{SLATE_600}]">{lang_nodes(answer, tag="span", display="block")}</div>
+            </details>'''
+
     # ---- Aufzugs-Anfrage form pieces ----
     def pill_group(name, opts, input_type='radio'):
         html = ''
@@ -700,9 +877,21 @@ def render_pera():
         </div>
     </section>
 
-    <section id="{KFW_ANCHOR_ID}" class="bg-white py-[56px] px-6">
+    <section id="{NOSHAFT_ANCHOR_ID}" class="bg-white py-[56px] px-6">
         <div class="max-w-5xl mx-auto">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[{PAPER_50}] border mb-5" style="border-color:#cfe4dd;">
+            <div class="max-w-2xl flex flex-col gap-2 mb-7">
+                <span class="text-xs font-semibold tracking-widest uppercase text-[{SLATE_600}]">{lang_nodes(NOSHAFT_EYEBROW)}</span>
+                <h2 class="font-display break-words text-2xl font-semibold text-[{INK_950}]">{lang_nodes(NOSHAFT_H2)}</h2>
+                <p class="text-[15px] leading-relaxed text-[{SLATE_700}] mt-1">{lang_nodes(NOSHAFT_LEAD, tag="span", display="block")}</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">{noshaft_cards_html}
+            </div>
+        </div>
+    </section>
+
+    <section id="{KFW_ANCHOR_ID}" class="bg-[{PAPER_50}] py-[56px] px-6">
+        <div class="max-w-5xl mx-auto">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border mb-5" style="border-color:#cfe4dd;">
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2f5347" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.5 2.5 5-5"></path></svg>
                 <span class="text-[11.5px] font-bold" style="color:#2f5347;">{lang_nodes(KFW_BADGE)}</span>
             </span>
@@ -710,7 +899,10 @@ def render_pera():
                 <span class="text-xs font-semibold tracking-widest uppercase text-[{SLATE_600}]">{lang_nodes(KFW_EYEBROW)}</span>
                 <h2 class="font-display break-words text-2xl font-semibold text-[{INK_950}]">{lang_nodes(KFW_H2)}</h2>
             </div>
-            <p class="text-[15px] leading-relaxed text-[{SLATE_700}] max-w-2xl">{lang_nodes(KFW_LEAD, tag="span", display="block")}</p>
+            <div class="max-w-2xl flex flex-col gap-3">
+                <p class="text-[15px] leading-relaxed text-[{SLATE_700}]">{lang_nodes(KFW_LEAD, tag="span", display="block")}</p>
+                <p class="text-[15px] leading-relaxed text-[{SLATE_700}]">{lang_nodes(KFW_LEAD_2, tag="span", display="block")}</p>
+            </div>
 
             <div class="grid md:grid-cols-[1.2fr_0.8fr] gap-7 items-start mt-6">
                 <div>
@@ -718,10 +910,22 @@ def render_pera():
                     <div class="flex flex-col gap-4">{kfw_steps_html}
                     </div>
                 </div>
-                <div class="bg-[{PAPER_50}] border-l-[3px] rounded-r-lg py-5 px-6" style="border-color:#2f5347;">
+                <div class="bg-white border-l-[3px] rounded-r-lg py-5 px-6" style="border-color:#2f5347;">
                     <span class="block text-[12px] font-bold uppercase tracking-wide mb-1.5" style="color:#2f5347;">{lang_nodes(KFW_WHO_LABEL)}</span>
                     <p class="text-[13.5px] leading-relaxed text-[{SLATE_700}]">{lang_nodes(KFW_WHO_TEXT, tag="span", display="block")}</p>
                 </div>
+            </div>
+            <p class="text-[12px] leading-relaxed text-[{SLATE_400}] mt-6 max-w-2xl">{lang_nodes(KFW_CURRENT_NOTE, tag="span", display="block")}</p>
+        </div>
+    </section>
+
+    <section class="bg-white py-[56px] px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="max-w-xl flex flex-col gap-2 mb-7">
+                <span class="text-xs font-semibold tracking-widest uppercase text-[{SLATE_600}]">{lang_nodes(FAQ_EYEBROW)}</span>
+                <h2 class="font-display break-words text-2xl font-semibold text-[{INK_950}]">{lang_nodes(FAQ_H2)}</h2>
+            </div>
+            <div class="flex flex-col gap-3 max-w-3xl">{faq_html}
             </div>
         </div>
     </section>
