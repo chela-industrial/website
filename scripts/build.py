@@ -253,10 +253,30 @@ def write_llms_txt():
 def compile_tailwind_css():
     """
     Runs the Tailwind CLI over the just-written out/**/*.html to produce a
-    small, purged, minified stylesheet at out/assets/styles.css, then swaps
-    the Tailwind CDN <script> tag for a <link> to it across every rendered
-    page. Requires `npx`/Node and `npm install` having been run in the repo
-    (tailwindcss is already a devDependency in package.json).
+    small, purged, minified stylesheet, then INLINES it into every page as a
+    <style> block in place of the Tailwind CDN <script> tag. Also written to
+    out/assets/styles.css as a plain file (handy for reference/debugging),
+    but no page actually depends on that file loading — see below for why
+    that matters. Requires `npx`/Node and `npm install` having been run in
+    the repo (tailwindcss is already a devDependency in package.json).
+
+    2026-09-25 fix: this used to swap the CDN script for
+    `<link rel="stylesheet" href="/assets/styles.css">` — a ROOT-RELATIVE
+    path. That's correct once the site is served from its real domain root,
+    but it silently breaks when a page is opened directly as a local file
+    (file:///.../index.html, e.g. double-clicking it or a plain "open in
+    browser" in an editor) — a browser resolves a leading "/" against the
+    filesystem root in that case, not the project folder, so the stylesheet
+    404s and the ENTIRE page renders unstyled (this is exactly what happened
+    when reviewing this build in VS Code — every page looked broken, even
+    though the underlying HTML/content was correct; the old CDN script
+    tolerated this because it used a full https:// URL, unaffected by the
+    page's own path). Inlining the CSS removes the external reference
+    entirely, so pages render identically under file://, a local dev
+    server, or the real production domain — with none of the CDN's runtime
+    cost. Never test only via a real HTTP server going forward — always
+    also confirm a page still renders correctly opened directly as a file,
+    since that's how this repo gets reviewed in the editor.
 
     If the compiler isn't available or the run fails for any reason, this
     prints a warning and leaves every page on the CDN script — the site
@@ -298,7 +318,10 @@ def compile_tailwind_css():
         os.remove(css_out)
         return
 
-    link_tag = '<link rel="stylesheet" href="/assets/styles.css">'
+    with open(css_out, 'r', encoding='utf-8') as f:
+        css_content = f.read()
+    style_tag = f'<style>{css_content}</style>'
+
     swapped = 0
     for root, _dirs, files in os.walk(OUT):
         for name in files:
@@ -308,12 +331,13 @@ def compile_tailwind_css():
             with open(path, 'r', encoding='utf-8') as f:
                 html = f.read()
             if CDN_SCRIPT_TAG in html:
-                html = html.replace(CDN_SCRIPT_TAG, link_tag)
+                html = html.replace(CDN_SCRIPT_TAG, style_tag)
                 with open(path, 'w', encoding='utf-8') as f:
                     f.write(html)
                 swapped += 1
     print(f'compiled Tailwind CSS -> {css_out} ({css_size} bytes), '
-          f'linked from {swapped} page(s)')
+          f'inlined into {swapped} page(s) (also kept as a plain file for '
+          f'reference, but no page depends on it loading)')
 
 
 def main():
